@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AtelierGL</string>
+        <string name="CONNEXION_email">Entrer votre Email ou Téléphone</string>
+        <string name="CONNEXION_email_hint">Votre Email ou Téléphone..</string>
+        <string name="CONNEXION_password">Entrer votre mot de passe</string>
+        <string name="CONNEXION_password_hint">Votre mot de passe..</string>
+        <string name="CONNEXION_password_oublier">Vous avez oublié votre mot de passe ?</string>
+        <string name="CONNEXION_sinscrire">Inscrivez-vous</string>
 </resources>
