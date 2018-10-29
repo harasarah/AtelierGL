@@ -64,6 +64,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:clickable="true"
+        android:onClick="ChangeFragment"
 
 
         />
@@ -75,6 +76,8 @@
         android:layout_toRightOf="@id/logo_client"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:clickable="true"
+        android:onClick="ChangeFragment"
         />
 
 
