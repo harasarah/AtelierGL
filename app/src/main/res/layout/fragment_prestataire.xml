@@ -3,12 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:windowBackground"
     tools:context=".PrestataireFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center_horizontal">
+        <EditText
+            android:id="@+id/inscription_nom"
+            android:layout_width="220dp"
+            android:layout_height="30dp" />
+        <EditText
+            android:id="@+id/inscription_prenom"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/inscription_nom"/>
+        <EditText
+            android:id="@+id/inscription_mail"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/inscription_prenom"
+            android:inputType="textEmailAddress"/>
+        <EditText
+            android:id="@+id/inscription_tel"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/inscription_mail"
+            android:inputType="phone"/>
+        <EditText
+            android:id="@+id/inscription_password"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/inscription_tel"
+            android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/inscription_password_confirmation"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/inscription_password"
+            android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/inscription_adresse"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/inscription_password_confirmation"/>
+        <EditText
+            android:id="@+id/inscription_ville"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/inscription_adresse"/>
+
+
+
+
+
+    </RelativeLayout>
 
 </FrameLayout>

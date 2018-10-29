@@ -64,6 +64,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:clickable="true"
+        android:onClick="ChangeFragment"
 
 
         />
@@ -75,6 +76,9 @@
         android:layout_toRightOf="@id/logo_client"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:clickable="false"
+        android:onClick="ChangeFragment"
+
         />
 
 
@@ -84,13 +88,15 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/logos_inscription"
         android:gravity="center"
-        >
-        <fragment
-            android:name="com.example.sarah.ateliergl.ClientFragment"
-            android:id="@+id/fragment_inscription"
-            android:layout_width="250dp"
-            android:layout_height="300dp"
-            ></fragment>
+        ><ScrollView
+        android:layout_width="290dp"
+        android:layout_height="370dp"><fragment
+        android:name="com.example.sarah.ateliergl.ClientFragment"
+        android:id="@+id/fragment_inscription"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></fragment></ScrollView>
+
 
     </RelativeLayout>
 
