@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:windowBackground"
+    tools:context=".ClientFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        >
+        <EditText
+            android:id="@+id/inscription_nom"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:hint="Nom"
+            android:layout_margin="5dp"
+            />
+        <EditText
+            android:id="@+id/inscription_prenom"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_nom"
+            android:hint="prenom"
+            android:layout_margin="5dp"
+
+
+            />
+        <EditText
+            android:id="@+id/inscription_mail"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_prenom"
+            android:inputType="textEmailAddress"
+            android:hint="@string/CONNEXION_email_hint"
+            android:layout_margin="5dp"
+
+            />
+        <EditText
+            android:id="@+id/inscription_tel"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_mail"
+            android:inputType="phone"
+            android:layout_margin="5dp"
+            android:hint="Téléphone"
+
+            />
+        <EditText
+            android:id="@+id/inscription_password"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_tel"
+            android:inputType="textPassword"
+            android:layout_margin="5dp"
+
+            />
+        <EditText
+            android:id="@+id/inscription_password_confirmation"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_password"
+            android:inputType="textPassword"
+            android:layout_margin="5dp"
+
+            />
+        <EditText
+            android:id="@+id/inscription_adresse"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_password_confirmation"
+            android:layout_margin="5dp"
+
+            />
+        <EditText
+            android:id="@+id/inscription_ville"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/inscription_adresse"
+            android:layout_margin="5dp"
+            />
+        <EditText
+            android:id="@+id/inscription_cin"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_ville"
+            android:layout_margin="5dp"
+            />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center_horizontal">
+        <Button
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_cin"
+            android:text="Confirmer"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:background="@drawable/rectangle_password_oublier"
+            android:layout_marginLeft="5dp"
+        />
+
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>
