@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ServiceActivity" />
+        <activity android:name=".ProfilsActivity"></activity>
     </application>
 
 </manifest>
