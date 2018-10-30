@@ -18,6 +18,8 @@
             android:layout_height="40dp"
             android:hint="Nom"
             android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_action_name"
+            android:textSize="16sp"
             />
         <EditText
             android:id="@+id/inscription_prenom"
@@ -26,6 +28,8 @@
             android:layout_below="@id/inscription_nom"
             android:hint="prenom"
             android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_action_name"
+            android:textSize="16sp"
 
 
             />
@@ -37,6 +41,8 @@
             android:inputType="textEmailAddress"
             android:hint="@string/CONNEXION_email_hint"
             android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_action_mail"
+            android:textSize="16sp"
 
             />
         <EditText
@@ -47,7 +53,8 @@
             android:inputType="phone"
             android:layout_margin="5dp"
             android:hint="Téléphone"
-
+            android:drawableLeft="@drawable/ic_action_phone"
+            android:textSize="16sp"
             />
         <EditText
             android:id="@+id/inscription_password"
@@ -56,6 +63,9 @@
             android:layout_below="@id/inscription_tel"
             android:inputType="textPassword"
             android:layout_margin="5dp"
+            android:hint="@string/CONNEXION_password_hint"
+            android:drawableLeft="@drawable/ic_action_password"
+            android:textSize="16sp"
 
             />
         <EditText
@@ -65,7 +75,9 @@
             android:layout_below="@id/inscription_password"
             android:inputType="textPassword"
             android:layout_margin="5dp"
-
+            android:drawableLeft="@drawable/ic_action_password"
+            android:textSize="16sp"
+            android:hint="Confirmer mot de passe"
             />
         <EditText
             android:id="@+id/inscription_adresse"
@@ -73,14 +85,17 @@
             android:layout_height="40dp"
             android:layout_below="@id/inscription_password_confirmation"
             android:layout_margin="5dp"
-
+            android:drawableLeft="@drawable/ic_action_adresse"
+            android:textSize="16sp"
             />
         <EditText
             android:id="@+id/inscription_ville"
             android:layout_width="220dp"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_below="@id/inscription_adresse"
             android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_action_adresse"
+            android:textSize="16sp"
             />
         <EditText
             android:id="@+id/inscription_cin"
@@ -88,11 +103,10 @@
             android:layout_height="40dp"
             android:layout_below="@id/inscription_ville"
             android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_action_name"
+            android:textSize="16sp"
             />
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
 
-            android:gravity="center_horizontal">
         <Button
             android:layout_width="220dp"
             android:layout_height="40dp"

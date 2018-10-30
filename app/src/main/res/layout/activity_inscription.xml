@@ -53,7 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/cardview1"
         android:gravity="center_horizontal"
-        android:paddingTop="15dp">
+        android:paddingTop="15dp"
+        android:layout_marginTop="15dp">
 
 
     <ImageView
@@ -88,9 +89,10 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/logos_inscription"
         android:gravity="center"
+        android:layout_marginTop="15dp"
         ><ScrollView
-        android:layout_width="290dp"
-        android:layout_height="370dp"><fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"><fragment
         android:name="com.example.sarah.ateliergl.ClientFragment"
         android:id="@+id/fragment_inscription"
         android:layout_width="match_parent"
