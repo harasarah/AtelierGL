@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:windowBackground"
-    tools:context=".ClientFragment">
+    tools:context=".ClientFragment"
+    android:paddingBottom="10dp">
 
 
     <RelativeLayout
@@ -13,20 +14,20 @@
         android:gravity="center_horizontal"
         >
         <EditText
-            android:id="@+id/inscription_nom"
+            android:id="@+id/inscription_prenom"
             android:layout_width="220dp"
             android:layout_height="40dp"
-            android:hint="Nom"
+            android:hint="@string/FORM_prenom_hint"
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/ic_action_name"
             android:textSize="16sp"
             />
         <EditText
-            android:id="@+id/inscription_prenom"
+            android:id="@+id/inscription_nom"
             android:layout_width="220dp"
             android:layout_height="40dp"
-            android:layout_below="@id/inscription_nom"
-            android:hint="prenom"
+            android:layout_below="@id/inscription_prenom"
+            android:hint="@string/FORM_nom_hint"
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/ic_action_name"
             android:textSize="16sp"
@@ -37,7 +38,7 @@
             android:id="@+id/inscription_mail"
             android:layout_width="220dp"
             android:layout_height="40dp"
-            android:layout_below="@id/inscription_prenom"
+            android:layout_below="@id/inscription_nom"
             android:inputType="textEmailAddress"
             android:hint="@string/CONNEXION_email_hint"
             android:layout_margin="5dp"
@@ -52,7 +53,7 @@
             android:layout_below="@id/inscription_mail"
             android:inputType="phone"
             android:layout_margin="5dp"
-            android:hint="Téléphone"
+            android:hint="@string/FORM_phone_hint"
             android:drawableLeft="@drawable/ic_action_phone"
             android:textSize="16sp"
             />
@@ -77,7 +78,7 @@
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/ic_action_password"
             android:textSize="16sp"
-            android:hint="Confirmer mot de passe"
+            android:hint="@string/FORM_password_confirmation_hint"
             />
         <EditText
             android:id="@+id/inscription_adresse"
@@ -87,6 +88,7 @@
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/ic_action_adresse"
             android:textSize="16sp"
+            android:hint="@string/FORM_adresse_hint"
             />
         <EditText
             android:id="@+id/inscription_ville"
@@ -96,6 +98,7 @@
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/ic_action_adresse"
             android:textSize="16sp"
+            android:hint="@string/FORM_ville_hint"
             />
         <EditText
             android:id="@+id/inscription_cin"
@@ -105,13 +108,14 @@
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/ic_action_name"
             android:textSize="16sp"
+            android:hint="@string/FORM_cin_hint"
             />
 
         <Button
             android:layout_width="220dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_cin"
-            android:text="Confirmer"
+            android:text="@string/FORM_confirmation_button_hint"
             android:textColor="#fff"
             android:textAllCaps="false"
             android:background="@drawable/rectangle_password_oublier"

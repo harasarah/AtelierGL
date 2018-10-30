@@ -91,13 +91,16 @@
         android:gravity="center"
         android:layout_marginTop="15dp"
         ><ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"><fragment
-        android:name="com.example.sarah.ateliergl.ClientFragment"
-        android:id="@+id/fragment_inscription"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        ></fragment></ScrollView>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"        >
+
+        <fragment
+            android:name="com.example.sarah.ateliergl.ClientFragment"
+            android:id="@+id/fragment_inscription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></fragment>
+        </ScrollView>
 
 
     </RelativeLayout>
