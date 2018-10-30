@@ -7,6 +7,26 @@
     <string name="CONNEXION_password_oublier">Vous avez oublié votre mot de passe ?</string>
     <string name="CONNEXION_sinscrire">Inscrivez-vous</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Form strings -->
+    <string name="FORM_nom_hint">Votre nom..</string>
+    <string name="FORM_prenom_hint">Votre prénom..</string>
+    <string name="FORM_password_confirmation_hint">Confirmer votre mot de passe..</string>
+    <string name="FORM_cin_hint">Votre CIN..</string>
+    <string name="FORM_ville_hint">Votre ville..</string>
+    <string name="FORM_adresse_hint">Votre adresse..</string>
+    <string name="FORM_phone_hint">Votre numéro de téléphone..</string>
+    <string name="FORM_confirmation_button_hint">Confirmer</string>
+    <string name="FORM_plomberie_hint">Plomberie</string>
+    <string name="FORM_jardinage_hint">Jardinage</string>
+    <string name="FORM_menage_hint">Ménage</string>
+    <string name="FORM_electricite_hint">Eléctricité</string>
+    <string name="FORM_peinture_hint">Peinture</string>
+
+
+
+
+
+
+
 </resources>

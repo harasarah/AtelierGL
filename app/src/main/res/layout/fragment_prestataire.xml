@@ -12,22 +12,22 @@
         android:gravity="center_horizontal"
         >
         <EditText
-            android:id="@+id/inscription_nom"
-            android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:hint="Nom"
-            android:layout_margin="5dp"
-            android:drawableLeft="@drawable/ic_action_name"
-            android:textSize="16sp"
-            />
-        <EditText
             android:id="@+id/inscription_prenom"
             android:layout_width="220dp"
             android:layout_height="40dp"
-            android:layout_below="@id/inscription_nom"
-            android:hint="prenom"
+            android:hint="@string/FORM_prenom_hint"
             android:layout_margin="5dp"
-            android:drawableLeft="@drawable/ic_action_name"
+            android:drawableStart="@drawable/ic_action_name"
+            android:textSize="16sp"
+            />
+        <EditText
+            android:id="@+id/inscription_nom"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/inscription_prenom"
+            android:hint="@string/FORM_nom_hint"
+            android:layout_margin="5dp"
+            android:drawableStart="@drawable/ic_action_name"
             android:textSize="16sp"
 
 
@@ -36,11 +36,11 @@
             android:id="@+id/inscription_mail"
             android:layout_width="220dp"
             android:layout_height="40dp"
-            android:layout_below="@id/inscription_prenom"
+            android:layout_below="@id/inscription_nom"
             android:inputType="textEmailAddress"
             android:hint="@string/CONNEXION_email_hint"
             android:layout_margin="5dp"
-            android:drawableLeft="@drawable/ic_action_mail"
+            android:drawableStart="@drawable/ic_action_mail"
             android:textSize="16sp"
 
             />
@@ -51,8 +51,8 @@
             android:layout_below="@id/inscription_mail"
             android:inputType="phone"
             android:layout_margin="5dp"
-            android:hint="Téléphone"
-            android:drawableLeft="@drawable/ic_action_phone"
+            android:hint="@string/FORM_phone_hint"
+            android:drawableStart="@drawable/ic_action_phone"
             android:textSize="16sp"
             />
         <EditText
@@ -63,7 +63,7 @@
             android:inputType="textPassword"
             android:layout_margin="5dp"
             android:hint="@string/CONNEXION_password_hint"
-            android:drawableLeft="@drawable/ic_action_password"
+            android:drawableStart="@drawable/ic_action_password"
             android:textSize="16sp"
 
             />
@@ -74,9 +74,9 @@
             android:layout_below="@id/inscription_password"
             android:inputType="textPassword"
             android:layout_margin="5dp"
-            android:drawableLeft="@drawable/ic_action_password"
+            android:drawableStart="@drawable/ic_action_password"
             android:textSize="16sp"
-            android:hint="Confirmer mot de passe"
+            android:hint="@string/FORM_password_confirmation_hint"
             />
         <EditText
             android:id="@+id/inscription_adresse"
@@ -84,9 +84,9 @@
             android:layout_height="40dp"
             android:layout_below="@id/inscription_password_confirmation"
             android:layout_margin="5dp"
-            android:drawableLeft="@drawable/ic_action_adresse"
+            android:drawableStart="@drawable/ic_action_adresse"
             android:textSize="16sp"
-            android:hint="Adresse"
+            android:hint="@string/FORM_adresse_hint"
             />
         <EditText
             android:id="@+id/inscription_ville"
@@ -94,9 +94,9 @@
             android:layout_height="40dp"
             android:layout_below="@id/inscription_adresse"
             android:layout_margin="5dp"
-            android:drawableLeft="@drawable/ic_action_adresse"
+            android:drawableStart="@drawable/ic_action_adresse"
             android:textSize="16sp"
-            android:hint="Ville"
+            android:hint="@string/FORM_ville_hint"
             />
         <EditText
             android:id="@+id/inscription_cin"
@@ -104,12 +104,12 @@
             android:layout_height="40dp"
             android:layout_below="@id/inscription_ville"
             android:layout_margin="5dp"
-            android:drawableLeft="@drawable/ic_action_name"
+            android:drawableStart="@drawable/ic_action_name"
             android:textSize="16sp"
-            android:hint="CIN"
+            android:hint="@string/FORM_cin_hint"
             />
         <LinearLayout
-            android:id="@+id/checkbox1"
+            android:id="@+id/check1"
             android:layout_width="240dp"
             android:layout_height="30dp"
             android:layout_below="@id/inscription_cin"
@@ -120,20 +120,21 @@
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="Plomberie"
+                android:text="@string/FORM_plomberie_hint"
                 />
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="Jardinage"
+                android:text="@string/FORM_jardinage_hint"
                 />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/checkbox2"
             android:layout_width="240dp"
             android:layout_height="30dp"
-            android:layout_below="@id/checkbox1"
+            android:layout_below="@id/check1"
             android:orientation="horizontal"
             android:gravity="center"
 
@@ -141,15 +142,16 @@
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="Ménage"
+                android:text="@string/FORM_menage_hint"
                 />
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="Electricité"
+                android:text="@string/FORM_electricite_hint"
                 />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/checkbox3"
             android:layout_width="240dp"
@@ -162,7 +164,7 @@
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="Peinture"
+                android:text="@string/FORM_peinture_hint"
                 />
 
 
@@ -175,12 +177,13 @@
             android:layout_width="220dp"
             android:layout_height="40dp"
             android:layout_below="@id/checkbox3"
-            android:text="Confirmer"
+            android:text="@string/FORM_confirmation_button_hint"
             android:textColor="#fff"
             android:textAllCaps="false"
             android:background="@drawable/rectangle_password_oublier"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
+
             />
 
 
