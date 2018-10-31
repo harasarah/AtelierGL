@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:windowBackground"
-    tools:context=".PrestataireFragment">
+    tools:context=".PrestataireFragment"
+    android:paddingBottom="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,16 +14,17 @@
         >
         <EditText
             android:id="@+id/inscription_prenom"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:hint="@string/FORM_prenom_hint"
             android:layout_margin="5dp"
             android:drawableStart="@drawable/ic_action_name"
+            android:drawableLeft="@drawable/ic_action_name"
             android:textSize="16sp"
             />
         <EditText
             android:id="@+id/inscription_nom"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_prenom"
             android:hint="@string/FORM_nom_hint"
@@ -34,7 +36,7 @@
             />
         <EditText
             android:id="@+id/inscription_mail"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_nom"
             android:inputType="textEmailAddress"
@@ -46,7 +48,7 @@
             />
         <EditText
             android:id="@+id/inscription_tel"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_mail"
             android:inputType="phone"
@@ -57,19 +59,20 @@
             />
         <EditText
             android:id="@+id/inscription_password"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_tel"
             android:inputType="textPassword"
             android:layout_margin="5dp"
             android:hint="@string/CONNEXION_password_hint"
             android:drawableStart="@drawable/ic_action_password"
+            android:drawableLeft="@drawable/ic_action_password"
             android:textSize="16sp"
 
             />
         <EditText
             android:id="@+id/inscription_password_confirmation"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_password"
             android:inputType="textPassword"
@@ -80,7 +83,7 @@
             />
         <EditText
             android:id="@+id/inscription_adresse"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_password_confirmation"
             android:layout_margin="5dp"
@@ -90,7 +93,7 @@
             />
         <EditText
             android:id="@+id/inscription_ville"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_adresse"
             android:layout_margin="5dp"
@@ -100,7 +103,7 @@
             />
         <EditText
             android:id="@+id/inscription_cin"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_ville"
             android:layout_margin="5dp"
@@ -110,7 +113,7 @@
             />
         <LinearLayout
             android:id="@+id/check1"
-            android:layout_width="240dp"
+            android:layout_width="310dp"
             android:layout_height="30dp"
             android:layout_below="@id/inscription_cin"
             android:orientation="horizontal"
@@ -132,7 +135,7 @@
 
         <LinearLayout
             android:id="@+id/checkbox2"
-            android:layout_width="240dp"
+            android:layout_width="310dp"
             android:layout_height="30dp"
             android:layout_below="@id/check1"
             android:orientation="horizontal"
@@ -148,13 +151,14 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:text="@string/FORM_electricite_hint"
+                
                 />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/checkbox3"
-            android:layout_width="240dp"
+            android:layout_width="310dp"
             android:layout_height="30dp"
             android:layout_below="@id/checkbox2"
             android:orientation="horizontal"
@@ -174,7 +178,7 @@
 
 
         <Button
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/checkbox3"
             android:text="@string/FORM_confirmation_button_hint"

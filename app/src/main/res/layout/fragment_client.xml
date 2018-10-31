@@ -15,7 +15,7 @@
         >
         <EditText
             android:id="@+id/inscription_prenom"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:hint="@string/FORM_prenom_hint"
             android:layout_margin="5dp"
@@ -24,7 +24,7 @@
             />
         <EditText
             android:id="@+id/inscription_nom"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_prenom"
             android:hint="@string/FORM_nom_hint"
@@ -36,7 +36,7 @@
             />
         <EditText
             android:id="@+id/inscription_mail"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_nom"
             android:inputType="textEmailAddress"
@@ -48,7 +48,7 @@
             />
         <EditText
             android:id="@+id/inscription_tel"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_mail"
             android:inputType="phone"
@@ -59,7 +59,7 @@
             />
         <EditText
             android:id="@+id/inscription_password"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_tel"
             android:inputType="textPassword"
@@ -71,7 +71,7 @@
             />
         <EditText
             android:id="@+id/inscription_password_confirmation"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_password"
             android:inputType="textPassword"
@@ -82,7 +82,7 @@
             />
         <EditText
             android:id="@+id/inscription_adresse"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_password_confirmation"
             android:layout_margin="5dp"
@@ -92,7 +92,7 @@
             />
         <EditText
             android:id="@+id/inscription_ville"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_adresse"
             android:layout_margin="5dp"
@@ -102,7 +102,7 @@
             />
         <EditText
             android:id="@+id/inscription_cin"
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_ville"
             android:layout_margin="5dp"
@@ -112,7 +112,7 @@
             />
 
         <Button
-            android:layout_width="220dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_cin"
             android:text="@string/FORM_confirmation_button_hint"
