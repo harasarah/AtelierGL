@@ -23,10 +23,8 @@
     <string name="FORM_electricite_hint">Eléctricité</string>
     <string name="FORM_peinture_hint">Peinture</string>
 
-
-
-
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
