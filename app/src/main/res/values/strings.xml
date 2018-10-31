@@ -22,6 +22,13 @@
     <string name="FORM_menage_hint">Ménage</string>
     <string name="FORM_electricite_hint">Eléctricité</string>
     <string name="FORM_peinture_hint">Peinture</string>
+    <string name="phone">telephone</string>
+    <string name="firstname">prenom</string>
+    <string name="lastname">nom</string>
+    <string name="address">adresse</string>
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="service_page_text">Quel service recherchez vous ?</string>

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_home_services_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ProfilsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +20,7 @@
         <activity android:name=".PasswordOublierActivity"/>
         <activity android:name=".InscriptionActivity"/>
         <activity android:name=".LoginActivity"/>
+        <activity android:name=".activity_profil"/>
     </application>
 
 </manifest>
