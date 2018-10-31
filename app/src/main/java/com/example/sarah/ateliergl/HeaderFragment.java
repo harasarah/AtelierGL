@@ -18,8 +18,7 @@ public class HeaderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_header,container,false);
-        ImageView imageView = rootView.findViewById(R.id.imageView22);
-        imageView.setImageResource(R.drawable.logo_service_good);
+
 
         return rootView;
     }
