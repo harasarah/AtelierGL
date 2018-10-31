@@ -17,7 +17,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText login;
     EditText password;
     Button sign_in;
-    TextView alert;
+    TextView inscription;
+    TextView password_oublier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,26 @@ public class LoginActivity extends AppCompatActivity {
     password =  findViewById(R.id.edittext_password);
     sign_in =  findViewById(R.id.confirmation_button);
     login =  findViewById(R.id.edittext_email);
+    inscription = findViewById(R.id.inscription_link);
+    password_oublier = findViewById(R.id.password_link);
+
+    inscription.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            Intent intent_inscription= new Intent(LoginActivity.this, InscriptionActivity.class);
+            startActivity(intent_inscription);
+        }
+    });
+        password_oublier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent_password_oublier= new Intent(LoginActivity.this, PasswordOublierActivity.class);
+                startActivity(intent_password_oublier);
+            }
+        });
+
     TextWatcher test = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {

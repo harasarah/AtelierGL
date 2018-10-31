@@ -5,8 +5,9 @@
     <string name="CONNEXION_password">Entrer votre mot de passe</string>
     <string name="CONNEXION_password_hint">Votre mot de passe..</string>
     <string name="CONNEXION_password_oublier">Vous avez oublié votre mot de passe ?</string>
-    <string name="CONNEXION_sinscrire">Inscrivez-vous</string>
-
+    <string name="CONNEXION_sinscrire">Pas de compte ?</string>
+    <string name="CONNEXION_inscription_link">Inscrivez-vous !</string>
+    <string name="CONNEXION_password_link">Cliquez ici.</string>
 
     <!-- Form strings -->
     <string name="FORM_nom_hint">Votre nom..</string>
