@@ -1,184 +1,284 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context=".MainActivity">
-
+    android:id="@+id/fragment_header1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="6"
+    tools:context=".ServiceActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cardview1">
+        android:id="@+id/header">
+
         <fragment
             android:name="com.example.sarah.ateliergl.HeaderFragment"
             android:id="@+id/fragment_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             ></fragment>
+
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/ic_electricite"
-        android:layout_width="106dp"
-        android:layout_height="96dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginRight="57dp"
-        app:srcCompat="@drawable/electricite" />
 
-    <TextView
-        android:id="@+id/txt_electricite"
-        android:layout_width="106dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ic_electricite"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginLeft="54dp"
-        android:layout_marginTop="1dp"
-        android:lineSpacingExtra="18sp"
-        android:text="Electricité"
-        android:textSize="18sp"
-        android:typeface="normal"
-        app:fontFamily="@font/allerta" />
-
-    <ImageView
-        android:id="@+id/ic_jardinage"
-        android:layout_width="105dp"
-        android:layout_height="96dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="113dp"
-        app:srcCompat="@drawable/jardinage" />
-
-    <TextView
-        android:id="@+id/txt_jardinage"
-        android:layout_width="103dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ic_electricite"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginRight="58dp"
-        android:lineSpacingExtra="18sp"
-        android:text="Jardinage"
-        android:textSize="18sp"
-        android:typeface="normal"
-        app:fontFamily="@font/allerta" />
-
-    <ImageView
-        android:id="@+id/ic_peinture"
-        android:layout_width="105dp"
-        android:layout_height="96dp"
-        android:layout_below="@+id/txt_jardinage"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        app:srcCompat="@drawable/peinture" />
-
-    <ImageView
-        android:id="@+id/ic_peinture2"
-        android:layout_width="104dp"
-        android:layout_height="94dp"
-        android:layout_below="@+id/txt_jardinage"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="58dp"
-        android:layout_marginLeft="58dp"
-        android:layout_marginTop="18dp"
-        app:srcCompat="@drawable/peinture"
-        tools:srcCompat="@drawable/menage" />
-
-    <TextView
-        android:id="@+id/txt_peinture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ic_peinture"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="-3dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:lineSpacingExtra="18sp"
-        android:text="Peinture"
-        android:textSize="18sp"
-        android:typeface="normal"
-        app:fontFamily="@font/allerta" />
-
-    <TextView
-        android:id="@+id/txt_menage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ic_peinture"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="0dp"
-        android:lineSpacingExtra="18sp"
-        android:text="Menage"
-        android:textSize="18sp"
-        android:typeface="normal"
-        app:fontFamily="@font/allerta" />
-
-    <ImageView
-        android:id="@+id/ic_plomberie"
-        android:layout_width="107dp"
-        android:layout_height="93dp"
-        android:layout_below="@+id/ic_peinture"
-
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="138dp"
-        android:layout_marginLeft="138dp"
-        android:layout_marginTop="38dp"
-        app:srcCompat="@drawable/plomberie" />
-
-    <TextView
-        android:id="@+id/txt_plomberie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ic_plomberie"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="147dp"
-        android:layout_marginLeft="147dp"
-        android:layout_marginTop="2dp"
-        android:lineSpacingExtra="18sp"
-        android:text="Plomberie"
-        android:textSize="18sp"
-        android:typeface="normal"
-        app:fontFamily="@font/allerta" />
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardview2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        app:cardBackgroundColor="#f0c40d">
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_below="@id/header"
+        android:gravity="center_vertical">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="@string/service_page_text"
+            android:textColor="@color/header"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/allerta"
+            android:layout_marginBottom="25dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="#fff"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
 
+                    <ImageView
+                        android:src="@drawable/logo_paint"
+                        android:layout_gravity="center"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="0dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Peinture"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:src="@drawable/logo_watering"
+                        android:layout_gravity="center"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="0dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jardinage"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:src="@drawable/logo_plumber"
+                        android:layout_gravity="center"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="0dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plomberie"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:src="@drawable/logo_housekeeping"
+                        android:layout_gravity="center"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="0dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ménage"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:src="@drawable/logo_ampoule"
+                        android:layout_gravity="center"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="0dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Electricité"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 
 </RelativeLayout>
+

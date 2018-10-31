@@ -16,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        app:srcCompat="@drawable/logo_service_good" />
+        app:srcCompat="@drawable/logo_service_good"
+        android:padding="20dp"/>
     <ProgressBar
         android:layout_width="match_parent"
         android:layout_height="50dp"

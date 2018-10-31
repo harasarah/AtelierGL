@@ -26,8 +26,7 @@
                 android:layout_height="match_parent"
                 android:contentDescription="Logo haut"
                 app:srcCompat="@drawable/logo_service_good"
-                android:layout_marginTop="7dp"
-
+                android:padding="5dp"
                 />
 
         </RelativeLayout>

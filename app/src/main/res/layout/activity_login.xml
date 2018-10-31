@@ -15,7 +15,7 @@
             android:name="com.example.sarah.ateliergl.HeaderFragment"
             android:id="@+id/fragment_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             ></fragment>
     </RelativeLayout>
 
@@ -27,49 +27,30 @@
         android:layout_marginTop="-5dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="Logo milieu"
-        app:srcCompat="@mipmap/client_connexion_foreground" />
+        app:srcCompat="@drawable/logo_avatar_client"
+        android:padding="25dp"/>
 
-    <TextView
-        android:id="@+id/textview_email"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:text="@string/CONNEXION_email"
-        android:textColor="@android:color/black"
-        android:textSize="12sp"
-        android:layout_marginTop="0dp"/>
 
     <EditText
         android:id="@+id/edittext_email"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_below="@id/textview_email"
+        android:layout_below="@id/imageView2"
         android:layout_centerHorizontal="true"
         android:hint="@string/CONNEXION_email_hint"
         android:textSize="12sp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/ic_action_mail"
 
 
         />
 
-    <TextView
-        android:id="@+id/textview_password"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edittext_email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="@string/CONNEXION_password"
-        android:textColor="@android:color/black"
-        android:textSize="12sp" />
 
     <EditText
         android:id="@+id/edittext_password"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_below="@id/textview_password"
+        android:layout_below="@id/edittext_email"
         android:layout_centerHorizontal="true"
         android:hint="@string/CONNEXION_password_hint"
         android:textSize="12sp"
@@ -119,7 +100,7 @@
             android:textColor="#fff"
             android:textAllCaps="false"
             android:background="@drawable/rectangle_password_oublier"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:textSize="16sp"
 
 
