@@ -112,9 +112,9 @@
         android:layout_below="@id/textview_password_oublier"
         >
         <Button
+            android:id="@+id/confirmation_button"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_below="@id/checkbox3"
             android:text="@string/FORM_confirmation_button_hint"
             android:textColor="#fff"
             android:textAllCaps="false"

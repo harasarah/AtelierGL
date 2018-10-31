@@ -129,24 +129,11 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="7dp"
                 android:contentDescription="Logo haut"
-                app:srcCompat="@drawable/logo_house_services2"
+                app:srcCompat="@drawable/logo_service_good"
 
                 />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="26dp"
-                android:layout_below="@id/imageView"
-                android:layout_marginTop="-6dp"
-                android:fontFamily="@font/allerta"
-                android:gravity="center_horizontal"
-                android:text="Home Services"
-                android:textColor="#fff"
-                android:textSize="22sp"
-                android:textStyle="bold"
 
-
-                app:fontFamily="@font/allerta" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
     EditText login;
     EditText password;
-    CardView sign_in;
+    Button sign_in;
     TextView alert;
 
     @Override
@@ -23,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
     password =  findViewById(R.id.edittext_password);
-    sign_in =  findViewById(R.id.cardview2);
+    sign_in =  findViewById(R.id.confirmation_button);
     login =  findViewById(R.id.edittext_email);
     TextWatcher test = new TextWatcher() {
         @Override

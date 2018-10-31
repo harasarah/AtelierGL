@@ -72,22 +72,17 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="good_background" />
+                                      <entry key="backgroundLayerName" value="home_services_background" />
                                       <entry key="foregroundImage" value="C:\Users\asus A\Desktop\Home Services\img\logo_service_good.png" />
-                                      <entry key="foregroundLayerName" value="good_foreground" />
+                                      <entry key="foregroundLayerName" value="home_services_foreground" />
                                       <entry key="legacyIconShape" value="NONE" />
-                                      <entry key="outputName" value="ic_good" />
+                                      <entry key="outputName" value="ic_home_services" />
                                       <entry key="webIconShape" value="NONE" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>
