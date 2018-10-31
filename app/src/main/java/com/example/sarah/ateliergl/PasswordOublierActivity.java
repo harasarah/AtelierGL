@@ -11,12 +11,12 @@ public class PasswordOublierActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_oublier);
-        Fragment fragment;
+       /* Fragment fragment;
         fragment = new HeaderFragment();
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.fragment_header, fragment);
-        ft.commit();
+        ft.add(R.id.fragment_header, fragment);
+        ft.commit();*/
 
 
     }

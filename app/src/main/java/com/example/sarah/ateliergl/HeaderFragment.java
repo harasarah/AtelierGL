@@ -12,9 +12,7 @@ import android.widget.ImageView;
 
 public class HeaderFragment extends Fragment {
     View rootView;
-    public HeaderFragment() {
-        // Required empty public constructor
-    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
