@@ -27,6 +27,7 @@
     <string name="firstname">prenom</string>
     <string name="lastname">nom</string>
     <string name="address">adresse</string>
+    <string name="pattern_string">vous devez entrer un nom compose de lettre uniquement</string>
 
 
 
