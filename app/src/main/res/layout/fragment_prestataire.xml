@@ -35,6 +35,7 @@
 
             />
         <EditText
+
             android:id="@+id/inscription_mail"
             android:layout_width="310dp"
             android:layout_height="40dp"
