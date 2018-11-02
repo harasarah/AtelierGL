@@ -40,6 +40,19 @@
 
 
         />
+        <TextView
+            android:id="@+id/text_client"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo_client"
+            android:text="Client"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/header"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            />
     <ImageView
         android:id="@+id/logo_prestataire"
         android:layout_width="60dp"
@@ -52,6 +65,19 @@
         android:onClick="ChangeFragment"
 
         />
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Prestataire"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/header"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/text_client"
+            android:layout_below="@id/logo_prestataire"
+            />
 
 
     </RelativeLayout>
