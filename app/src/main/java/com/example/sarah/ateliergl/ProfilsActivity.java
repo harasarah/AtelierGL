@@ -21,8 +21,8 @@ public class ProfilsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profils);
         ButterKnife.bind (this);
 
-        prestataires.add(new Prestataire(R.drawable.logo_avatar_client, "Feriani ", "Othmane", "adresse, rue, ville", 0606060606, "password", "G688851", "plomberie", "description"));
-        prestataires.add(new Prestataire(R.drawable.logo_avatar_client, "Rifi ", "Zainab", "adresse, rue, ville", 0606060606, "password", "G688851", "plomberie", "description"));
+        prestataires.add(new Prestataire(R.drawable.othmane_avatar, "Feriani ", "Othmane", "adresse, rue, ville", 0606060606, "password", "G688851", "plomberie", "description"));
+        prestataires.add(new Prestataire(R.drawable.rifi_avatar, "Rifi ", "Zainab", "adresse, rue, ville", 0606060606, "password", "G688851", "plomberie", "description"));
         prestataires.add(new Prestataire(R.drawable.logo_avatar_client, "Mouqine ", "Sarah", "adresse, rue, ville", 0606060606, "password", "G688851", "plomberie", "description"));
 
         MyAdapter adapter;
