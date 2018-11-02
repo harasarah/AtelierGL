@@ -27,7 +27,8 @@
         android:layout_marginTop="-5dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="Logo milieu"
-        app:srcCompat="@mipmap/client_connexion_foreground" />
+        android:src="@drawable/rifi_avatar"
+         />
 
     <TextView
         android:id="@+id/phone"
