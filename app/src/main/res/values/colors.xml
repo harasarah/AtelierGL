@@ -5,6 +5,6 @@
     <color name="colorAccent">#0a3d62</color>
     <color name="header">#0a3d62</color>
     <color name="clickable_link">#1e3799</color>
-
+    <color name="erreur">#990000</color>
 
 </resources>

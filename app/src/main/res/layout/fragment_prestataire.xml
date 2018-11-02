@@ -37,6 +37,7 @@
 
             />
         <EditText
+
             android:id="@+id/inscription_mail"
             android:layout_width="310dp"
             android:layout_height="40dp"
@@ -177,20 +178,18 @@
         </LinearLayout>
 
 
-
-
         <Button
+            android:id="@+id/sign_in_pres"
             android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/checkbox3"
-            android:text="@string/FORM_confirmation_button_hint"
-            android:textColor="#fff"
-            android:textAllCaps="false"
-            android:background="@drawable/rectangle_password_oublier"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
+            android:background="@drawable/rectangle_password_oublier"
+            android:text="@string/FORM_confirmation_button_hint"
+            android:textAllCaps="false"
 
-            />
+            android:textColor="#fff" />
 
 
 
