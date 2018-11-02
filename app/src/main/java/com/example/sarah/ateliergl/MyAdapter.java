@@ -22,7 +22,7 @@ public class MyAdapter extends ArrayAdapter {
     @Override
     public View getView (int position, View convertView, ViewGroup parent){
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(getContext().LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.celluleprofil, parent, false);
+        convertView = inflater.inflate(R.layout.cellule_profile, parent, false);
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.ic_profil);
         imageView.setBackgroundResource(prestataires.get(position).getImageID());

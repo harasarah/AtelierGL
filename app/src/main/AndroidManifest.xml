@@ -16,11 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ServiceActivity" />
+        <activity android:name=".ProfilsActivity" />
         <activity android:name=".PasswordOublierActivity"/>
         <activity android:name=".InscriptionActivity"/>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".activity_profil"/>
+        <activity android:name=".ServiceActivity"/>
     </application>
 
 </manifest>
