@@ -15,7 +15,7 @@
 
         >
         <EditText
-            android:id="@+id/inscription_prenom"
+            android:id="@+id/inscription_prenom_cl"
             android:layout_width="310dp"
             android:layout_height="40dp"
             android:hint="@string/FORM_prenom_hint"
@@ -25,10 +25,10 @@
             android:textSize="16sp"
             />
         <EditText
-            android:id="@+id/inscription_nom"
+            android:id="@+id/inscription_nom_cl"
             android:layout_width="310dp"
             android:layout_height="40dp"
-            android:layout_below="@id/inscription_prenom"
+            android:layout_below="@id/inscription_prenom_cl"
             android:hint="@string/FORM_nom_hint"
             android:layout_margin="5dp"
             android:drawableStart="@drawable/ic_action_name"
@@ -38,10 +38,10 @@
             />
         <EditText
 
-            android:id="@+id/inscription_mail"
+            android:id="@+id/inscription_mail_cl"
             android:layout_width="310dp"
             android:layout_height="40dp"
-            android:layout_below="@id/inscription_nom"
+            android:layout_below="@id/inscription_nom_cl"
             android:inputType="textEmailAddress"
             android:hint="@string/CONNEXION_email_hint"
             android:layout_margin="5dp"
@@ -50,10 +50,10 @@
 
             />
         <EditText
-            android:id="@+id/inscription_tel"
+            android:id="@+id/inscription_tel_cl"
             android:layout_width="310dp"
             android:layout_height="40dp"
-            android:layout_below="@id/inscription_mail"
+            android:layout_below="@id/inscription_mail_cl"
             android:inputType="phone"
             android:layout_margin="5dp"
             android:hint="@string/FORM_phone_hint"
@@ -64,7 +64,7 @@
             android:id="@+id/inscription_password"
             android:layout_width="310dp"
             android:layout_height="40dp"
-            android:layout_below="@id/inscription_tel"
+            android:layout_below="@id/inscription_tel_cl"
             android:inputType="textPassword"
             android:layout_margin="5dp"
             android:hint="@string/CONNEXION_password_hint"
