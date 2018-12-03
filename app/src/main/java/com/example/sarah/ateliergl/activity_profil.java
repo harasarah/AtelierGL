@@ -2,10 +2,12 @@ package com.example.sarah.ateliergl;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.effect.Effect;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +20,10 @@ import android.widget.TextView;
 import butterknife.ButterKnife;
 
 public class activity_profil extends AppCompatActivity {
-    EditText phoneNumber;
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult( requestCode, permissions, grantResults );
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,18 +45,24 @@ public class activity_profil extends AppCompatActivity {
         t_prenom.setText(prenom);
         t_adresse.setText(adresse);
 
+
+
         Button callButton = (Button)findViewById(R.id.btnCall);
         callButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                try {
+
+
                     Uri phoneNumber = Uri.parse( "tel:"+tel );
                     Intent call = new Intent(Intent.ACTION_CALL, phoneNumber);
-                    startActivity(call);
-                } catch (ActivityNotFoundException activityException) {
-                    Log.e("Calling a Phone Number", "Call failed", activityException);
-                }
 
+                if (ActivityCompat.checkSelfPermission(activity_profil.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
+                {
+                    Log.d( "test phone", "Calling" );
+                    ActivityCompat.requestPermissions(activity_profil.this, new String[] {Manifest.permission.CALL_PHONE}, 1);
+                    return;
+                }
+                startActivity(call);
             }
         });
     }

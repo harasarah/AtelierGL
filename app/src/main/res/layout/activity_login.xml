@@ -68,14 +68,14 @@
         android:layout_below="@id/edittext_password"
         android:layout_centerHorizontal="true"
         >
-    <TextView
-        android:id="@+id/left1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/CONNEXION_sinscrire"
-        android:textColor="@android:color/black"
-        android:gravity="center_vertical"
-        android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/left1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/CONNEXION_sinscrire"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"
+            android:textSize="12sp"/>
         <TextView
             android:id="@+id/inscription_link"
             android:layout_toRightOf="@id/left1"
@@ -87,7 +87,7 @@
             android:clickable="true"
             android:layout_marginLeft="3dp"/>
 
-</RelativeLayout>
+    </RelativeLayout>
 
 
     <RelativeLayout
@@ -98,31 +98,31 @@
         android:layout_centerHorizontal="true"
 
         >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/left2"
-        android:layout_centerHorizontal="true"
-        android:text="@string/CONNEXION_password_oublier"
-        android:layout_marginTop="5dp"
-        android:textColor="@android:color/black"
-        android:textSize="12sp"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/left2"
+            android:layout_centerHorizontal="true"
+            android:text="@string/CONNEXION_password_oublier"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            />
         <RelativeLayout
             android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="20dp"
             >
-        <TextView
-            android:id="@+id/password_link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/CONNEXION_password_link"
-            android:textColor="@color/clickable_link"
-            android:textSize="12sp"
-            android:clickable="true"
-            android:layout_marginLeft="3dp"/></RelativeLayout>
+            <TextView
+                android:id="@+id/password_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/CONNEXION_password_link"
+                android:textColor="@color/clickable_link"
+                android:textSize="12sp"
+                android:clickable="true"
+                android:layout_marginLeft="3dp"/></RelativeLayout>
 
     </RelativeLayout>
 
