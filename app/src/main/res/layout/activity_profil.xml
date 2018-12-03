@@ -175,5 +175,17 @@
         android:layout_marginBottom="-154dp"
         app:srcCompat="@drawable/ic_action_adresse" />
 
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="153dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rectangle_password_oublier"
+        android:text="Appeler"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="17sp" />
+
 
 </RelativeLayout>
