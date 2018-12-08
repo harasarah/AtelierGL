@@ -7,185 +7,195 @@
     android:background="@android:color/white"
     tools:context=".MainActivity">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/imageViewx"
+        android:gravity="center"
+        android:background="@drawable/background"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            >
+            <ImageView
+                android:id="@+id/return_img"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/ic_action_return"
+                android:layout_marginLeft="12dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                />
+
+
+
+        </RelativeLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="Logo milieu"
+            android:src="@drawable/rifi_avatar"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#fff"
+
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView2"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/prenom"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/header"
+                android:padding="3dp"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/nom"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/prenom"
+                android:textColor="@color/header"
+                android:padding="3dp"
+                android:textSize="24dp"
+                android:textStyle="bold"
+
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/fragment_header1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:gravity="bottom|right"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="24dp"
+        >
+
+        <ImageView
+            android:id="@+id/callphone"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:src="@drawable/callphone"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+
+
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/description_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewx"
+        >
+
+
+
+
+
+
+
+
+
+
+        <RelativeLayout
+
+            android:id="@+id/adress_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="45dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="24dp"
+
+            >
+            <ImageView
+                android:id="@+id/adress_img"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                app:srcCompat="@drawable/ic_action_adresse"
+                android:layout_marginLeft="24dp"/>
+
+            <TextView
+                android:id="@+id/label_adresse"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:text="@string/address"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/adress_img"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/adress"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@id/label_adresse"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                />
+
+        </RelativeLayout>
+
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/evaluation_texte"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_below="@+id/description_layout"
+        android:layout_marginTop="24dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="Evaluez ce prestataire"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fragment_header1">
-        <fragment
-            android:name="com.example.sarah.ateliergl.HeaderFragment"
-            android:id="@+id/fragment_header"
-            android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/evaluation_texte"
+        android:gravity="center"
+        >
+
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            ></fragment>
+
+            />
+
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@id/fragment_header1"
-        android:layout_marginTop="-5dp"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="Logo milieu"
-        android:src="@drawable/rifi_avatar"
-         />
-
-    <TextView
-        android:id="@+id/phone"
-        android:layout_width="149dp"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="158dp"
-        android:layout_marginLeft="158dp"
-        android:layout_marginTop="243dp" />
-
-    <TextView
-        android:id="@+id/nom"
-        android:layout_width="149dp"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="351dp" />
-
-    <TextView
-        android:id="@+id/prenom"
-        android:layout_width="149dp"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginLeft="157dp"
-        android:layout_marginTop="297dp" />
-
-    <TextView
-        android:id="@+id/adress"
-        android:layout_width="149dp"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginLeft="157dp"
-        android:layout_marginTop="401dp" />
-
-    <RatingBar
-        android:id="@+id/ratingBar2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
-        android:layout_marginBottom="63dp" />
-
-    <TextView
-        android:id="@+id/label_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginLeft="54dp"
-        android:layout_marginTop="243dp"
-        android:text="@string/phone"/>
-
-    <TextView
-        android:id="@+id/label_adresse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="400dp"
-        android:text="@string/address" />
-
-    <TextView
-        android:id="@+id/label_prenom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="53dp"
-        android:layout_marginLeft="53dp"
-        android:layout_marginTop="295dp"
-        android:text="@string/firstname" />
-
-    <TextView
-        android:id="@+id/label_nom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="349dp"
-        android:text="@string/lastname" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/label_phone"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginBottom="-2dp"
-        app:srcCompat="@drawable/ic_action_phone" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/label_phone"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginBottom="-53dp"
-        app:srcCompat="@drawable/ic_action_name" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/label_phone"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginBottom="-104dp"
-        app:srcCompat="@drawable/ic_action_name" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView5"
-        android:layout_alignBottom="@+id/label_phone"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginBottom="-154dp"
-        app:srcCompat="@drawable/ic_action_adresse" />
-
-    <Button
-        android:id="@+id/btnCall"
-        android:layout_width="153dp"
-        android:layout_height="35dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rectangle_password_oublier"
-        android:text="Appeler"
-        android:textAllCaps="false"
-        android:textColor="#fff"
-        android:textSize="17sp" />
-
 
 </RelativeLayout>

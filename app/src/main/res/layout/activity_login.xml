@@ -16,6 +16,7 @@
             android:id="@+id/fragment_header"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            tools:layout="@layout/fragment_header"
             ></fragment>
     </RelativeLayout>
 
@@ -61,40 +62,14 @@
 
 
         />
-    <RelativeLayout
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/textview_inscription"
-        android:layout_below="@id/edittext_password"
-        android:layout_centerHorizontal="true"
-        >
-        <TextView
-            android:id="@+id/left1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/CONNEXION_sinscrire"
-            android:textColor="@android:color/black"
-            android:gravity="center_vertical"
-            android:textSize="12sp"/>
-        <TextView
-            android:id="@+id/inscription_link"
-            android:layout_toRightOf="@id/left1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/CONNEXION_inscription_link"
-            android:textColor="@color/clickable_link"
-            android:textSize="12sp"
-            android:clickable="true"
-            android:layout_marginLeft="3dp"/>
 
-    </RelativeLayout>
 
 
     <RelativeLayout
         android:id="@+id/textview_password_oublier"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textview_inscription"
+        android:layout_below="@id/buttons"
         android:layout_centerHorizontal="true"
 
         >
@@ -128,10 +103,11 @@
 
 
     <RelativeLayout
+        android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_below="@id/textview_password_oublier"
+        android:layout_below="@id/edittext_password"
         >
         <Button
             android:id="@+id/confirmation_button"
@@ -141,9 +117,23 @@
             android:textColor="#fff"
             android:textAllCaps="false"
             android:background="@drawable/rectangle_password_oublier"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:textSize="16sp"
 
+
+            />
+
+        <Button
+            android:id="@+id/inscription_link"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/confirmation_button"
+            android:text="@string/CONNEXION_inscription_link"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:background="@drawable/rectangle_password_oublier"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
 
             />
     </RelativeLayout>

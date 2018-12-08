@@ -19,6 +19,8 @@
             android:id="@+id/fragment_header"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            tools:layout="@layout/fragment_header"
+
             ></fragment>
 
     </RelativeLayout>

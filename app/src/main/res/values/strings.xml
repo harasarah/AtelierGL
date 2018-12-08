@@ -23,17 +23,18 @@
     <string name="FORM_menage_hint">Ménage</string>
     <string name="FORM_electricite_hint">Eléctricité</string>
     <string name="FORM_peinture_hint">Peinture</string>
-    <string name="phone">telephone</string>
-    <string name="firstname">prenom</string>
-    <string name="lastname">nom</string>
-    <string name="address">adresse</string>
+    <string name="phone">Telephone</string>
+    <string name="firstname">Prenom</string>
+    <string name="lastname">Nom</string>
+    <string name="address">Adresse</string>
     <string name="pattern_string">vous devez entrer un nom compose de lettre uniquement</string>
-
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="service_page_text">Quel service recherchez vous ?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

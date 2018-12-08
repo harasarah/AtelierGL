@@ -12,10 +12,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class InscriptionActivity extends AppCompatActivity {
+
+    Boolean initialisation = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
+
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragment_inscription, new BlankFragment());
+        ft.commit();
+
     }
     public void ChangeFragment(View view){
         Fragment fragment;
@@ -26,6 +35,7 @@ public class InscriptionActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.fragment_inscription,fragment);
             ft.commit();
+            initialisation = false;
 
         }
 
@@ -35,7 +45,10 @@ public class InscriptionActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.fragment_inscription,fragment);
             ft.commit();
+            initialisation = false;
+
         }
+
 
     }
 }

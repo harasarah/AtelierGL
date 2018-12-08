@@ -15,11 +15,14 @@
             android:name="com.example.sarah.ateliergl.HeaderFragment"
             android:id="@+id/fragment_header"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_header"
+
             ></fragment>
     </RelativeLayout>
     <RelativeLayout
         android:layout_marginTop="10dp"
+        android:padding="5dp"
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,11 +30,20 @@
         android:gravity="center"
 
         >
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            style="@style/MaterialSearchBarLight"
+            app:mt_hint="Othmane.."
+            app:mt_maxSuggestionsCount="10"
+            android:padding="5dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:mt_roundedSearchBarEnabled="true"
+            app:mt_searchBarColor="#f6f7f7"
+            android:id="@+id/searchBar"
 
-        <SearchView
-            android:layout_width="200dp"
-            android:layout_height="40dp"
             />
+
+
 
     </RelativeLayout>
 

@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText login;
     EditText password;
     Button sign_in;
-    TextView inscription;
+    Button inscription;
     TextView password_oublier;
 
     @Override

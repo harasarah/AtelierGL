@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MyAdapter extends ArrayAdapter {
     private ArrayList<Prestataire> prestataires;
     public MyAdapter(Context context, int ressource, ArrayList<Prestataire> prestataires){
@@ -24,8 +26,8 @@ public class MyAdapter extends ArrayAdapter {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(getContext().LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.cellule_profile, parent, false);
 
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.ic_profil);
-        imageView.setBackgroundResource(prestataires.get(position).getImageID());
+        de.hdodenhof.circleimageview.CircleImageView imageView = convertView.findViewById(R.id.ic_profil);
+        imageView.setImageResource(prestataires.get(position).getImageID());
 
         TextView textView = (TextView) convertView.findViewById(R.id.name);
         textView.setText((prestataires.get(position).getNom())+(prestataires.get(position).getPrenom()));

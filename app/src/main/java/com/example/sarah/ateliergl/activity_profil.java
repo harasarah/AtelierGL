@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
@@ -36,19 +37,27 @@ public class activity_profil extends AppCompatActivity {
         String adresse = new String(((Bundle) extras).getString("adresse"));
 
 
-        TextView t_phone = (TextView) findViewById(R.id.phone);
+        //TextView t_phone = (TextView) findViewById(R.id.phone);
         TextView t_nom = (TextView) findViewById(R.id.nom);
         TextView t_prenom = (TextView) findViewById(R.id.prenom);
         TextView t_adresse = (TextView) findViewById(R.id.adress);
-        t_phone.setText(tel.toString());
+        //t_phone.setText(tel.toString());
         t_nom.setText(nom);
         t_prenom.setText(prenom);
         t_adresse.setText(adresse);
 
 
+        ImageView return_img = findViewById(R.id.return_img);
+        return_img.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v)
+            {
+                activity_profil.this.finish();
+            }
+        });
 
-        Button callButton = (Button)findViewById(R.id.btnCall);
-        callButton.setOnClickListener(new View.OnClickListener() {
+
+        ImageView callphone = findViewById(R.id.callphone);
+        callphone.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
 

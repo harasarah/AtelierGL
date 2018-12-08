@@ -30,6 +30,9 @@ public class ProfilsActivity extends AppCompatActivity {
         listPrestataire.setAdapter(adapter);
     }
 
+
+
+
     @OnItemClick(R.id.profilslist)
     public void onListClicked(int position){
         Intent intent= new Intent(ProfilsActivity.this, activity_profil.class);
