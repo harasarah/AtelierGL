@@ -1,35 +1,50 @@
 package com.example.sarah.ateliergl;
 
-public class Prestataire {
-    Integer imageID;
-    String nom;
-    String prenom;
-    String adresse;
-    Integer tel;
-    String password;
-    String cin;
-    String profession;
-    String description;
+import com.google.gson.annotations.SerializedName;
 
-    public Prestataire(Integer imageID, String nom, String prenom, String adresse, Integer tel, String password, String cin, String profession, String description) {
-        this.imageID = imageID;
+public class Prestataire {
+    @SerializedName("nom")
+    String nom;
+    @SerializedName("prenom")
+    String prenom;
+    @SerializedName("adresse")
+    String adresse;
+    @SerializedName("ville")
+    String ville;
+    @SerializedName("tel")
+    Integer tel;
+    @SerializedName("service")
+    String service;
+    @SerializedName("cin")
+    String cin;
+    @SerializedName("type_profil")
+    String type_profil;
+    @SerializedName("mdp")
+    String mdp;
+    @SerializedName("mail")
+    String mail;
+    @SerializedName("raiting")
+    String raiting;
+
+    public Prestataire(String nom, String prenom, String adresse, String ville, Integer tel, String service,String cin, String type_profil, String mdp, String mail, String raiting) {
+       // this.imageID = imageID;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
+        this.ville = ville;
         this.tel = tel;
-        this.password = password;
+        this.service = service;
         this.cin = cin;
-        this.profession = profession;
-        this.description = description;
+        this.type_profil = type_profil;
+        this.mdp = mdp;
+        this.mail = mail;
+        this.raiting = raiting;
     }
 
-    public Integer getImageID() {
-        return imageID;
-    }
 
-    public void setImageID(Integer imageID) {
-        this.imageID = imageID;
-    }
+
+
+
 
     public String getNom() {
         return nom;
@@ -55,6 +70,14 @@ public class Prestataire {
         this.adresse = adresse;
     }
 
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String adresse) {
+        this.ville = ville;
+    }
+
     public Integer getTel() {
         return tel;
     }
@@ -63,12 +86,12 @@ public class Prestataire {
         this.tel = tel;
     }
 
-    public String getPassword() {
-        return password;
+    public String getService() {
+        return service;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setService(String service) {
+        this.service = service;
     }
 
     public String getCin() {
@@ -79,19 +102,35 @@ public class Prestataire {
         this.cin = cin;
     }
 
-    public String getProfession() {
-        return profession;
+    public String getType_profil() {
+        return type_profil;
     }
 
-    public void setProfession(String profession) {
-        this.profession = profession;
+    public void setType_profil(String type_profil) {
+        this.type_profil = type_profil;
     }
 
-    public String getDescription() {
-        return description;
+    public String getMdp() {
+        return mdp;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getRaiting() {
+        return raiting;
+    }
+
+    public void setRaiting(String raiting) {
+        this.raiting = raiting;
     }
 }
