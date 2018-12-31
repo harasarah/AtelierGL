@@ -8,5 +8,5 @@ import retrofit2.http.Query;
 
 public interface GetPrestataireDataService {
     @GET("get/ceNkpvxMya")
-    Call<PrestataireList> getEmployeeData(@Query("indent") int indent);
+    Call<PrestataireList> getPrestataireData(@Query("indent") int indent);
 }

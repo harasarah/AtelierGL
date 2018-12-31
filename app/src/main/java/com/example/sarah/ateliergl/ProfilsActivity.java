@@ -63,45 +63,64 @@ import retrofit2.Response;
 public class ProfilsActivity extends AppCompatActivity {
 
     private MyAdapter adapter;
-    private RecyclerView recyclerView;
+    @BindView(R.id.recycler_view_prestataire_list)
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profils);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_profils );
+        //ButterKnife.bind (this);
 
         /*Create handle for the RetrofitInstance interface*/
-        GetPrestataireDataService service = RetrofitInstance.getRetrofitInstance().create(GetPrestataireDataService.class);
+        GetPrestataireDataService service = RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<PrestataireList> call = service.getEmployeeData(100);
+        Call<PrestataireList> call = service.getPrestataireData( 100 );
 
         /*Log the URL called*/
-        Log.wtf("URL Called", call.request().url() + "");
+        Log.wtf( "URL Called", call.request().url() + "" );
 
-        call.enqueue(new Callback<PrestataireList>() {
+        call.enqueue( new Callback<PrestataireList>() {
             @Override
             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
-                generateEmployeeList(response.body().getPrestataireArrayList());
+                generatePrestataireList( response.body().getPrestataireArrayList() );
             }
 
             @Override
             public void onFailure(Call<PrestataireList> call, Throwable t) {
-                Toast.makeText(ProfilsActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+                Toast.makeText( ProfilsActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT ).show();
             }
-        });
+        } );
     }
 
     /*Method to generate List of employees using RecyclerView with custom adapter*/
-    private void generateEmployeeList(ArrayList<Prestataire> empDataList) {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_prestataire_list);
+    void generatePrestataireList(ArrayList<Prestataire> empDataList) {
+        recyclerView = (RecyclerView) findViewById( R.id.recycler_view_prestataire_list );
 
-        adapter = new MyAdapter(empDataList);
+        adapter = new MyAdapter( empDataList );
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ProfilsActivity.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager( ProfilsActivity.this );
 
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager( layoutManager );
 
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter( adapter );
     }
+
+   // @OnItemClick(R.id.recycler_view_prestataire_list)
+   // public void onListClicked(int position) {
+   //     Intent intent = new Intent( ProfilsActivity.this, activity_profil.class );
+      //  Prestataire pres = Prestataire.get(position);
+      //  intent.putExtra( "nom", pres.nom );
+      //  intent.putExtra( "prenom", pres.tel );
+        //intent.putExtra("cin", pres.cin);
+        //intent.putExtra("imageID", pres.imageID);
+        //intent.putExtra("adresse", pres.adresse);
+        //intent.putExtra("tel", pres.tel);
+        //intent.putExtra("password", pres.password);
+        // intent.putExtra("profession", pres.profession);
+        // intent.putExtra("description", pres.description);
+    //      startActivity(intent);
+  //  }
 }
+

@@ -42,7 +42,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHolder> {
 
-    private ArrayList<Prestataire> dataList;
+     ArrayList<Prestataire> dataList;
 
     public MyAdapter(ArrayList<Prestataire> dataList) {
         this.dataList = dataList;
@@ -59,7 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
     public void onBindViewHolder(PrestataireViewHolder holder, int position) {
         holder.txtNom.setText(dataList.get(position).getNom());
       //  holder.txtPrenom.setText(dataList.get(position).getPrenom());
-      //  holder.txtEmpPhone.setText(dataList.get(position).getPhone());
+      //  holder.txtPhone.setText(dataList.get(position).getTel());
     }
 
     @Override
@@ -69,13 +69,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
 
     class PrestataireViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtNom, txtPrenom ;
+        TextView txtNom, txtPrenom , txtPhone;
 
         PrestataireViewHolder(View itemView) {
             super(itemView);
             txtNom = (TextView) itemView.findViewById(R.id.nom);
           //  txtPrenom = (TextView) itemView.findViewById(R.id.prenom);
-          //  txtEmpPhone = (TextView) itemView.findViewById(R.id.txt_employee_phone);
+         //  txtPhone = (TextView) itemView.findViewById(R.id.txt_employee_phone);
         }
     }
 }

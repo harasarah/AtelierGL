@@ -12,7 +12,7 @@ public class PrestataireList {
         return prestataireList;
     }
 
-    public void setPrestataireArrayList(ArrayList<Prestataire> employeeArrayList) {
-        this.prestataireList = employeeArrayList;
+    public void setPrestataireArrayList(ArrayList<Prestataire> prestataireArrayList) {
+        this.prestataireList = prestataireArrayList;
     }
 }
