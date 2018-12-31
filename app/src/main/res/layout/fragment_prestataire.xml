@@ -14,76 +14,80 @@
         android:padding="15dp"
 
         >
+
         <EditText
             android:id="@+id/inscription_prenom_cl"
             android:layout_width="310dp"
             android:layout_height="40dp"
-            android:hint="@string/FORM_prenom_hint"
             android:layout_margin="5dp"
-            android:drawableStart="@drawable/ic_action_name"
             android:drawableLeft="@drawable/ic_action_name"
-            android:textSize="16sp"
-            />
+            android:drawableStart="@drawable/ic_action_name"
+            android:hint="@string/FORM_prenom_hint"
+            android:textSize="16sp" />
+
         <EditText
             android:id="@+id/inscription_nom_cl"
             android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_prenom_cl"
-            android:hint="@string/FORM_nom_hint"
             android:layout_margin="5dp"
             android:drawableStart="@drawable/ic_action_name"
+            android:hint="@string/FORM_nom_hint"
             android:textSize="16sp"
 
 
             />
+
         <EditText
 
             android:id="@+id/inscription_mail_cl"
             android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_nom_cl"
-            android:inputType="textEmailAddress"
-            android:hint="@string/CONNEXION_email_hint"
             android:layout_margin="5dp"
             android:drawableStart="@drawable/ic_action_mail"
+            android:hint="@string/CONNEXION_email_hint"
+            android:inputType="textEmailAddress"
             android:textSize="16sp"
 
             />
+
         <EditText
             android:id="@+id/inscription_tel_cl"
             android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_mail_cl"
-            android:inputType="phone"
             android:layout_margin="5dp"
-            android:hint="@string/FORM_phone_hint"
             android:drawableStart="@drawable/ic_action_phone"
-            android:textSize="16sp"
-            />
+            android:hint="@string/FORM_phone_hint"
+            android:inputType="phone"
+            android:textSize="16sp" />
+
         <EditText
             android:id="@+id/inscription_password"
             android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_tel_cl"
-            android:inputType="textPassword"
             android:layout_margin="5dp"
-            android:hint="@string/CONNEXION_password_hint"
-            android:drawableStart="@drawable/ic_action_password"
             android:drawableLeft="@drawable/ic_action_password"
+            android:drawableStart="@drawable/ic_action_password"
+            android:hint="@string/CONNEXION_password_hint"
+            android:inputType="textPassword"
             android:textSize="16sp"
 
             />
+
         <EditText
             android:id="@+id/inscription_password_confirmation"
             android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_below="@id/inscription_password"
-            android:inputType="textPassword"
             android:layout_margin="5dp"
             android:drawableStart="@drawable/ic_action_password"
-            android:textSize="16sp"
             android:hint="@string/FORM_password_confirmation_hint"
-            />
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+
         <EditText
             android:id="@+id/inscription_adresse"
             android:layout_width="310dp"
@@ -91,9 +95,9 @@
             android:layout_below="@id/inscription_password_confirmation"
             android:layout_margin="5dp"
             android:drawableStart="@drawable/ic_action_adresse"
-            android:textSize="16sp"
             android:hint="@string/FORM_adresse_hint"
-            />
+            android:textSize="16sp" />
+
         <EditText
             android:id="@+id/inscription_ville"
             android:layout_width="310dp"
@@ -101,9 +105,9 @@
             android:layout_below="@id/inscription_adresse"
             android:layout_margin="5dp"
             android:drawableStart="@drawable/ic_action_adresse"
-            android:textSize="16sp"
             android:hint="@string/FORM_ville_hint"
-            />
+            android:textSize="16sp" />
+
         <EditText
             android:id="@+id/inscription_cin"
             android:layout_width="310dp"
@@ -111,28 +115,28 @@
             android:layout_below="@id/inscription_ville"
             android:layout_margin="5dp"
             android:drawableStart="@drawable/ic_action_name"
-            android:textSize="16sp"
             android:hint="@string/FORM_cin_hint"
-            />
+            android:textSize="16sp" />
+
         <LinearLayout
             android:id="@+id/check1"
             android:layout_width="310dp"
             android:layout_height="30dp"
             android:layout_below="@id/inscription_cin"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="horizontal"
 
             >
+
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="@string/FORM_plomberie_hint"
-                />
+                android:text="@string/FORM_plomberie_hint" />
+
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="@string/FORM_jardinage_hint"
-                />
+                android:text="@string/FORM_jardinage_hint" />
 
         </LinearLayout>
 
@@ -141,15 +145,16 @@
             android:layout_width="310dp"
             android:layout_height="30dp"
             android:layout_below="@id/check1"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="horizontal"
 
             >
+
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="@string/FORM_menage_hint"
-                />
+                android:text="@string/FORM_menage_hint" />
+
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
@@ -164,15 +169,15 @@
             android:layout_width="310dp"
             android:layout_height="30dp"
             android:layout_below="@id/checkbox2"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="horizontal"
 
             >
+
             <CheckBox
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:text="@string/FORM_peinture_hint"
-                />
+                android:text="@string/FORM_peinture_hint" />
 
 
         </LinearLayout>
@@ -190,8 +195,6 @@
             android:textAllCaps="false"
 
             android:textColor="#fff" />
-
-
 
 
     </RelativeLayout>

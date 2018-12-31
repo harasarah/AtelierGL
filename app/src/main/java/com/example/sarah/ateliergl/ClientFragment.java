@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.sarah.ateliergl.R;
+
 
 public class ClientFragment extends Fragment {
     EditText nom, prenom, phone;
@@ -77,7 +79,7 @@ public class ClientFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_client, container, false);
+        View view= inflater.inflate( R.layout.fragment_client, container, false);
         nom =  view.findViewById(R.id.inscription_nom_cl);
         prenom =  view.findViewById(R.id.inscription_prenom_cl);
         phone =  view.findViewById(R.id.inscription_tel_cl);

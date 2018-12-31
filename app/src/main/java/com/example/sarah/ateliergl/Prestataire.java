@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 public class Prestataire {
     @SerializedName("nom")
     String nom;
-    @SerializedName("prenom")
-    String prenom;
+    //@SerializedName("prenom")
+   // String prenom;
     @SerializedName("adresse")
     String adresse;
     @SerializedName("ville")
@@ -29,7 +29,7 @@ public class Prestataire {
     public Prestataire(String nom, String prenom, String adresse, String ville, Integer tel, String service,String cin, String type_profil, String mdp, String mail, String raiting) {
        // this.imageID = imageID;
         this.nom = nom;
-        this.prenom = prenom;
+     //   this.prenom = prenom;
         this.adresse = adresse;
         this.ville = ville;
         this.tel = tel;
@@ -54,13 +54,13 @@ public class Prestataire {
         this.nom = nom;
     }
 
-    public String getPrenom() {
+    /*public String getPrenom() {
         return prenom;
     }
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
-    }
+    }*/
 
     public String getAdresse() {
         return adresse;
