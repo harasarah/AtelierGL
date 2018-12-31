@@ -58,7 +58,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
         return new PrestataireViewHolder(view);
     }
     @Override
-    public void onBindViewHolder(PrestataireViewHolder holder, int position) {
+    public void onBindViewHolder(PrestataireViewHolder holder, final int position) {
         holder.txtNom.setText(dataList.get(position).getNom());
         //  holder.txtPrenom.setText(dataList.get(position).getPrenom());
         //  holder.txtPhone.setText(dataList.get(position).getTel());
@@ -67,15 +67,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
             public void onClick(View v) {
 
                 Intent intent = new Intent( context, activity_profil.class );
-                intent.putExtra( "nom", "no" );
-                //intent.putExtra( "prenom", pres.tel );
-                //intent.putExtra("cin", pres.cin);
-                //intent.putExtra("imageID", pres.imageID);
-                //intent.putExtra("adresse", pres.adresse);
-                //intent.putExtra("tel", pres.tel);
-                //intent.putExtra("password", pres.password);
-                // intent.putExtra("profession", pres.profession);
-                // intent.putExtra("description", pres.description);
+                Prestataire pres = dataList.get(position);
+                intent.putExtra( "nom", pres.nom);
+
+                intent.putExtra( "prenom", pres.tel );
+                intent.putExtra("cin", pres.cin);
+              //  intent.putExtra("imageID", pres.imageID);
+                intent.putExtra("adresse", pres.adresse);
+                intent.putExtra("tel", pres.tel);
+                intent.putExtra("password", pres.mdp);
+                intent.putExtra("profession", pres.type_profil);
+              //   intent.putExtra("description", pres.description);
                 context.startActivity(intent);
             }
         });
