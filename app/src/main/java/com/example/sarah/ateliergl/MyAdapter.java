@@ -1,6 +1,7 @@
 package com.example.sarah.ateliergl;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -43,9 +44,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHolder> {
 
      ArrayList<Prestataire> dataList;
+     Context context;
 
-    public MyAdapter(ArrayList<Prestataire> dataList) {
+    public MyAdapter(ArrayList<Prestataire> dataList, Context context) {
         this.dataList = dataList;
+        this.context = context;
     }
 
     @Override
@@ -54,13 +57,30 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
         View view = layoutInflater.inflate(R.layout.cellule_profile, parent, false);
         return new PrestataireViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(PrestataireViewHolder holder, int position) {
         holder.txtNom.setText(dataList.get(position).getNom());
-      //  holder.txtPrenom.setText(dataList.get(position).getPrenom());
-      //  holder.txtPhone.setText(dataList.get(position).getTel());
-    }
+        //  holder.txtPrenom.setText(dataList.get(position).getPrenom());
+        //  holder.txtPhone.setText(dataList.get(position).getTel());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent( context, activity_profil.class );
+                intent.putExtra( "nom", "no" );
+                //intent.putExtra( "prenom", pres.tel );
+                //intent.putExtra("cin", pres.cin);
+                //intent.putExtra("imageID", pres.imageID);
+                //intent.putExtra("adresse", pres.adresse);
+                //intent.putExtra("tel", pres.tel);
+                //intent.putExtra("password", pres.password);
+                // intent.putExtra("profession", pres.profession);
+                // intent.putExtra("description", pres.description);
+                context.startActivity(intent);
+            }
+        });
+    };
+
 
     @Override
     public int getItemCount() {

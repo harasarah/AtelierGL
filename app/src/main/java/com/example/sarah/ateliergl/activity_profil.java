@@ -30,7 +30,7 @@ public class activity_profil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
         ButterKnife.bind (this);
-        Bundle extras= getIntent().getExtras();
+        /* Bundle extras= getIntent().getExtras();
         String nom = new String(((Bundle) extras).getString("nom"));
         String prenom = new String(((Bundle) extras).getString("prenom"));
         final Integer tel = new Integer(((Bundle) extras).getInt("tel"));
@@ -73,6 +73,6 @@ public class activity_profil extends AppCompatActivity {
                 }
                 startActivity(call);
             }
-        });
+        }); */
     }
 }
