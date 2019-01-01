@@ -10,7 +10,7 @@ public class PasswordOublierActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_password_oublier);
+       // setContentView(R.layout.activity_password_oublier);
        /* Fragment fragment;
         fragment = new HeaderFragment();
         FragmentManager fm = getFragmentManager();

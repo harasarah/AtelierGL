@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     sign_in =  findViewById(R.id.confirmation_button);
     login =  findViewById(R.id.edittext_email);
     inscription = findViewById(R.id.inscription_link);
-    password_oublier = findViewById(R.id.password_link);
+
 
     inscription.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -38,14 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent_inscription);
         }
     });
-        password_oublier.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent intent_password_oublier= new Intent(LoginActivity.this, PasswordOublierActivity.class);
-                startActivity(intent_password_oublier);
-            }
-        });
 
     TextWatcher test = new TextWatcher() {
         @Override
