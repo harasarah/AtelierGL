@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProfilsActivity" />
-        <activity android:name=".PasswordOublierActivity"/>
         <activity android:name=".InscriptionActivity"/>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".activity_profil"/>
