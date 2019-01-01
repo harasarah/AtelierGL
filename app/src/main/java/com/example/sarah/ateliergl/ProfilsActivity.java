@@ -75,7 +75,7 @@ public class ProfilsActivity extends AppCompatActivity {
         GetPrestataireDataService service = RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<PrestataireList> call = service.getPrestataireData( 100 );
+        Call<PrestataireList> call = service.getPrestataireData(  );
 
         /*Log the URL called*/
         Log.wtf( "URL Called", call.request().url() + "" );
