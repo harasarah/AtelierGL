@@ -13,7 +13,7 @@ public class ServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_service);
+        setContentView( R.layout.activity_service);
         cardView = findViewById(R.id.card_peinture);
 
         cardView.setOnClickListener(new View.OnClickListener() {
