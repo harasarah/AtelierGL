@@ -1,6 +1,8 @@
 package com.example.sarah.ateliergl;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +15,7 @@ import com.example.sarah.ateliergl.network.GetPrestataireDataService;
 import com.example.sarah.ateliergl.network.RetrofitInstance;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -64,6 +67,7 @@ public class ProfilsActivity extends AppCompatActivity {
     private MyAdapter adapter;
     @BindView(R.id.recycler_view_prestataire_list)
     RecyclerView recyclerView;
+    String se;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,12 +79,13 @@ public class ProfilsActivity extends AppCompatActivity {
         GetPrestataireDataService service = RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<PrestataireList> call = service.getPrestataireData(  );
+        Call<PrestataireList> call = service.getPrestataireData();
 
         /*Log the URL called*/
         Log.wtf( "URL Called", call.request().url() + "" );
 
         call.enqueue( new Callback<PrestataireList>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
                 generatePrestataireList( response.body().getPrestataireArrayList() );
@@ -94,7 +99,19 @@ public class ProfilsActivity extends AppCompatActivity {
     }
 
     /*Method to generate List of employees using RecyclerView with custom adapter*/
+    @RequiresApi(api = Build.VERSION_CODES.N)
     void generatePrestataireList(ArrayList<Prestataire> empDataList) {
+        se = getIntent().getStringExtra("se");
+        empDataList.removeIf(new Predicate<Prestataire>() {
+            @Override
+            public boolean test(Prestataire prestataire) {
+                if (prestataire.service == null) return true;
+                if(prestataire.service.equals(se)){
+                    return false;
+                }
+                return true;
+            }
+        });
         recyclerView = (RecyclerView) findViewById( R.id.recycler_view_prestataire_list );
 
         adapter = new MyAdapter( empDataList,this);
@@ -107,8 +124,8 @@ public class ProfilsActivity extends AppCompatActivity {
     }
 
     @OnItemClick(R.id.recycler_view_prestataire_list)
-   public void onListClicked(int position) {
-       Intent intent = new Intent( ProfilsActivity.this, activity_profil.class );
+    public void onListClicked(int position) {
+        Intent intent = new Intent( ProfilsActivity.this, activity_profil.class );
         //Prestataire pres = recyclerView.get(position);
         intent.putExtra( "nom", "no" );
         //intent.putExtra( "prenom", pres.tel );
@@ -119,7 +136,6 @@ public class ProfilsActivity extends AppCompatActivity {
         //intent.putExtra("password", pres.password);
         // intent.putExtra("profession", pres.profession);
         // intent.putExtra("description", pres.description);
-         startActivity(intent);
+        startActivity(intent);
     }
 }
-

@@ -74,6 +74,7 @@
                         android:layout_height="64dp"
                         android:padding="0dp"/>
                     <TextView
+                        android:tag="se"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Peinture"
@@ -93,6 +94,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/card_jardinier"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
@@ -114,6 +116,7 @@
                         android:layout_height="64dp"
                         android:padding="0dp"/>
                     <TextView
+                        android:tag="se"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jardinage"
@@ -143,6 +146,7 @@
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
+                android:id="@+id/card_plombier"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
@@ -164,6 +168,7 @@
                         android:layout_height="64dp"
                         android:padding="0dp"/>
                     <TextView
+                        android:tag="se"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Plomberie"
@@ -183,6 +188,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/card_menage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
@@ -204,6 +210,7 @@
                         android:layout_height="64dp"
                         android:padding="0dp"/>
                     <TextView
+                        android:tag="se"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ménage"
@@ -233,6 +240,7 @@
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
+                android:id="@+id/card_electricite"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
@@ -254,6 +262,7 @@
                         android:layout_height="64dp"
                         android:padding="0dp"/>
                     <TextView
+                        android:tag="se"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Electricité"
@@ -284,4 +293,3 @@
 
 
 </RelativeLayout>
-

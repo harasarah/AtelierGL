@@ -129,11 +129,13 @@
             >
 
             <CheckBox
+                android:id="@+id/pl"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:text="@string/FORM_plomberie_hint" />
 
             <CheckBox
+                android:id="@+id/ja"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:text="@string/FORM_jardinage_hint" />
@@ -151,11 +153,13 @@
             >
 
             <CheckBox
+                android:id="@+id/me"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:text="@string/FORM_menage_hint" />
 
             <CheckBox
+                android:id="@+id/el"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:text="@string/FORM_electricite_hint"
@@ -175,6 +179,7 @@
             >
 
             <CheckBox
+                android:id="@+id/pe"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:text="@string/FORM_peinture_hint" />
