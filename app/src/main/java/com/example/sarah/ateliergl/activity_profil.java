@@ -35,7 +35,7 @@ public class activity_profil extends AppCompatActivity {
 
         final Integer tel = new Integer(((Bundle) extras).getInt("tel"));
         String adresse = new String(((Bundle) extras).getString("adresse"));
-
+//TextView t_phone = (TextView) findViewById(R.id.phone);
 
         //TextView t_phone = (TextView) findViewById(R.id.phone);
         TextView t_nom = (TextView) findViewById(R.id.nom);
