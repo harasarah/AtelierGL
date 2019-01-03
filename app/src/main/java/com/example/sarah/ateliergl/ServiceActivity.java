@@ -1,12 +1,10 @@
 package com.example.sarah.ateliergl;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
-
 public class ServiceActivity extends AppCompatActivity {
 
     CardView cardPe, cardPl, cardJa, cardEl, cardMe;
@@ -20,7 +18,6 @@ public class ServiceActivity extends AppCompatActivity {
         cardJa = findViewById(R.id.card_jardinier);
         cardEl = findViewById(R.id.card_electricite);
         cardMe = findViewById(R.id.card_menage);
-
         View.OnClickListener l = new View.OnClickListener() {
             @Override
             public void onClick(View view) {

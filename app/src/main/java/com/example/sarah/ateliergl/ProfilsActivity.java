@@ -85,7 +85,6 @@ public class ProfilsActivity extends AppCompatActivity {
         Log.wtf( "URL Called", call.request().url() + "" );
 
         call.enqueue( new Callback<PrestataireList>() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
                 generatePrestataireList( response.body().getPrestataireArrayList() );
@@ -99,10 +98,14 @@ public class ProfilsActivity extends AppCompatActivity {
     }
 
     /*Method to generate List of employees using RecyclerView with custom adapter*/
-    @RequiresApi(api = Build.VERSION_CODES.N)
     void generatePrestataireList(ArrayList<Prestataire> empDataList) {
         se = getIntent().getStringExtra("se");
-        empDataList.removeIf(new Predicate<Prestataire>() {
+        ArrayList<Prestataire> empDataListFiltered = new ArrayList<>();
+        for (Prestataire p : empDataList) {
+            if (p.service == null) continue;
+            if(p.service.equals(se)) empDataListFiltered.add(p);
+        }
+        /*empDataList.removeIf(new Predicate<Prestataire>() {
             @Override
             public boolean test(Prestataire prestataire) {
                 if (prestataire.service == null) return true;
@@ -111,10 +114,10 @@ public class ProfilsActivity extends AppCompatActivity {
                 }
                 return true;
             }
-        });
+        });*/
         recyclerView = (RecyclerView) findViewById( R.id.recycler_view_prestataire_list );
 
-        adapter = new MyAdapter( empDataList,this);
+        adapter = new MyAdapter( empDataListFiltered,this);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager( ProfilsActivity.this );
 

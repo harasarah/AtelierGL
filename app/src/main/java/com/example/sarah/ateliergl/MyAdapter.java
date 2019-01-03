@@ -69,7 +69,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
                 Intent intent = new Intent( context, activity_profil.class );
                 Prestataire pres = dataList.get(position);
                 intent.putExtra( "nom", pres.nom);
-
                 intent.putExtra( "prenom", pres.tel );
                 intent.putExtra("cin", pres.cin);
               //  intent.putExtra("imageID", pres.imageID);
@@ -96,8 +95,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
         PrestataireViewHolder(View itemView) {
             super(itemView);
             txtNom = (TextView) itemView.findViewById(R.id.nom);
-          //  txtPrenom = (TextView) itemView.findViewById(R.id.prenom);
-         //  txtPhone = (TextView) itemView.findViewById(R.id.txt_employee_phone);
+             // txtPrenom = (TextView) itemView.findViewById(R.id.prenom)
+            // txtPhone = (TextView) itemView.findViewById(R.id.txt_employee_phone);
         }
     }
 }
