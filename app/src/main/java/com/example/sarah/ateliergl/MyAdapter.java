@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.sarah.ateliergl.Prestataire;
@@ -60,6 +61,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
     @Override
     public void onBindViewHolder(PrestataireViewHolder holder, final int position) {
         holder.txtNom.setText(dataList.get(position).getNom());
+        holder.ratingBar.setRating(dataList.get(position).getRating());
         //  holder.txtPrenom.setText(dataList.get(position).getPrenom());
         //  holder.txtPhone.setText(dataList.get(position).getTel());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -92,10 +94,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
     class PrestataireViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtNom, txtPrenom , txtPhone;
+        RatingBar ratingBar;
 
         PrestataireViewHolder(View itemView) {
             super(itemView);
             txtNom = (TextView) itemView.findViewById(R.id.nom);
+            ratingBar = itemView.findViewById(R.id.ratingx);
           //  txtPrenom = (TextView) itemView.findViewById(R.id.prenom);
          //  txtPhone = (TextView) itemView.findViewById(R.id.txt_employee_phone);
         }
