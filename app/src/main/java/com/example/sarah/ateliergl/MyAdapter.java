@@ -79,6 +79,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
                 intent.putExtra("tel", pres.tel);
                 intent.putExtra("password", pres.mdp);
                 intent.putExtra("profession", pres.type_profil);
+                intent.putExtra("rating",pres.rating);
               //   intent.putExtra("description", pres.description);
                 context.startActivity(intent);
             }

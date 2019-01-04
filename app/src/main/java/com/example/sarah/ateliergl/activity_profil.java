@@ -28,24 +28,23 @@ public class activity_profil extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        RatingBar ratingBarProfil;
-        //ratingBarProfil = view.findviewby
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
         ButterKnife.bind (this);
         Bundle extras= getIntent().getExtras();
-        String nom = new String(((Bundle) extras).getString("nom"));
 
-        final Integer tel = new Integer(((Bundle) extras).getInt("tel"));
-        String adresse = new String(((Bundle) extras).getString("adresse"));
+        String nom = new String((extras).getString("nom"));
+        final Integer tel = new Integer((extras).getInt("tel"));
+        String adresse = new String((extras).getString("adresse"));
+        final float rating = new Float((extras).getFloat("rating"));
 
-        //TextView t_phone = (TextView) findViewById(R.id.phone);
         TextView t_nom = (TextView) findViewById(R.id.nom);
-
         TextView t_adresse = (TextView) findViewById(R.id.adress);
-        //t_phone.setText(tel.toString());
-        t_nom.setText(nom);
+        RatingBar ratingBarProfil = findViewById(R.id.ratingBar2);
 
+        t_nom.setText(nom);
+        ratingBarProfil.setRating(rating);
         t_adresse.setText(adresse);
 
 

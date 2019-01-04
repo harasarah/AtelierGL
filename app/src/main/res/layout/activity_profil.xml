@@ -40,7 +40,7 @@
             android:layout_height="150dp"
             android:layout_marginTop="5dp"
             android:contentDescription="Logo milieu"
-            android:src="@drawable/rifi_avatar"
+            android:src="@drawable/logo_avatar_prestataire"
             app:civ_border_width="2dp"
             app:civ_border_color="#fff"
 
@@ -193,6 +193,13 @@
             android:id="@+id/ratingBar2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:numStars="5"
+            android:paddingTop="8dp"
+            android:progressTint="@color/header"
+            android:stepSize="0.1"
+            android:rating="0.0"
+            android:text="Rating"
 
             />
 

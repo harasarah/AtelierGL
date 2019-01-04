@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     Button sign_in;
     Button inscription;
-    TextView password_oublier;
     ArrayList<Prestataire> allProfils;
 
     private void validate(final String log, final String pass) {
