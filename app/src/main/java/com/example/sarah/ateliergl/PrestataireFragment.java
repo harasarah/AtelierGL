@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.example.sarah.ateliergl.R;
@@ -27,7 +28,65 @@ public class PrestataireFragment extends Fragment {
     CheckBox pl, pe, me, el, ja;
     ArrayList<Prestataire> allProfils;
     String se;
+    RatingBar rating;
+    private boolean validate (EditText email){
 
+        if (email.toString().isEmpty()){
+            email.setError("champs vide");
+            return false;
+
+        } else {
+            if ( Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches() || Patterns.PHONE.matcher(email.toString()).matches()) {
+                email.setError(null);
+                return true;
+            }
+            else {
+
+                email.setError("entrer un vrai mail ou numero");
+                return false;
+            }
+
+
+        }
+    }
+    private boolean validate1 (EditText nom){
+
+        if (nom.toString().isEmpty()){
+            nom.setError("champs vide");
+            return false;
+
+        } else {
+            if ( Patterns.EMAIL_ADDRESS.matcher(nom.toString()).matches()) {
+                nom.setError(null);
+                return true;
+            }
+            else {
+                nom.setError("seulement les lettres sont autorisés");
+                return false;
+            }
+
+
+        }
+    }
+    private boolean validate2 (EditText phone){
+
+        if (phone.toString().isEmpty()){
+            phone.setError("champs vide");
+            return false;
+
+        } else {
+            if ( Patterns.PHONE.matcher(phone.toString()).matches()) {
+                phone.setError(null);
+                return true;
+            }
+            else {
+                phone.setError("seulement les lettres sont autorisés");
+                return false;
+            }
+
+
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +107,7 @@ public class PrestataireFragment extends Fragment {
         pl = view.findViewById(R.id.pl);
         me = view.findViewById(R.id.me);
         el = view.findViewById(R.id.el);
-
+        rating = view.findViewById(R.id.ratingx);
 
 
         Button button = (Button) view.findViewById(R.id.sign_in_pres);
@@ -71,8 +130,11 @@ public class PrestataireFragment extends Fragment {
                     public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
                         allProfils = (ArrayList<Prestataire>) response.body().getPrestataireArrayList();
                         PrestataireList p = new PrestataireList();
-                        allProfils.add(new Prestataire(nom.getText().toString(),prenom.getText().toString(),address.getText().toString(),ville.getText().toString(),Integer.parseInt(phone.getText().toString()),se,cin.getText().toString(),"client",password.getText().toString(),email.getText().toString(),""));
+                        allProfils.add(new Prestataire(nom.getText().toString(),prenom.getText().toString(),address.getText().toString(),ville.getText().toString(),Integer.parseInt(phone.getText().toString()),se,cin.getText().toString(),"client",password.getText().toString(),email.getText().toString(),0));
                         p.setPrestataireArrayList(allProfils);
+
+
+
 
                         GetPrestataireDataService service = com.example.sarah.ateliergl.network.RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
                         Call<PrestataireList> call2 = service.setPrestataireData(p);

@@ -23,10 +23,10 @@ public class Prestataire {
     String mdp;
     @SerializedName("mail")
     String mail;
-    @SerializedName("raiting")
-    String raiting;
+    @SerializedName("rating")
+    float rating;
 
-    public Prestataire(String nom, String prenom, String adresse, String ville, Integer tel, String service,String cin, String type_profil, String mdp, String mail, String raiting) {
+    public Prestataire(String nom, String prenom, String adresse, String ville, Integer tel, String service,String cin, String type_profil, String mdp, String mail, float rating) {
        // this.imageID = imageID;
         this.nom = nom;
      //   this.prenom = prenom;
@@ -38,7 +38,7 @@ public class Prestataire {
         this.type_profil = type_profil;
         this.mdp = mdp;
         this.mail = mail;
-        this.raiting = raiting;
+        this.rating = rating;
     }
 
 
@@ -126,11 +126,11 @@ public class Prestataire {
         this.mail = mail;
     }
 
-    public String getRaiting() {
-        return raiting;
+    public float getRating() {
+        return rating;
     }
 
-    public void setRaiting(String raiting) {
-        this.raiting = raiting;
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 }

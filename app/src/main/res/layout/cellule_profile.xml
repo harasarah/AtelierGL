@@ -28,21 +28,20 @@
                 android:textColor="#000000"
                 android:textStyle="bold"
                 android:textSize="16dp" />
-        <RatingBar
-            android:paddingTop="8dp"
-            android:id="@+id/rating"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_width="100dp"
-            android:layout_height="28dp"
-            android:layout_below="@id/nom"
-            android:gravity="center_vertical"
-            android:numStars="5"
-            android:rating="4"
-            android:text="Rating"
-            android:progressTint="@color/header"
 
-
-            />
+            <RatingBar
+                android:id="@+id/ratingx"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nom"
+                android:gravity="center_vertical"
+                android:numStars="5"
+                android:paddingTop="8dp"
+                android:progressTint="@color/header"
+                android:stepSize="0.1"
+                android:rating="0.0"
+                android:text="Rating" />
 
         </RelativeLayout>
         <RelativeLayout

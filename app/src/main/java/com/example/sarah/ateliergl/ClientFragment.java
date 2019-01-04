@@ -62,7 +62,7 @@ public class ClientFragment extends Fragment {
                     public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
                         allProfils = (ArrayList<Prestataire>) response.body().getPrestataireArrayList();
                         PrestataireList p = new PrestataireList();
-                        allProfils.add( new Prestataire( nom.getText().toString(), prenom.getText().toString(), address.getText().toString(), ville.getText().toString(), Integer.parseInt( phone.getText().toString() ), "", cin.getText().toString(), "client", password.getText().toString(), email.getText().toString(), "" ) );
+                        allProfils.add( new Prestataire( nom.getText().toString(), prenom.getText().toString(), address.getText().toString(), ville.getText().toString(), Integer.parseInt( phone.getText().toString() ), "", cin.getText().toString(), "client", password.getText().toString(), email.getText().toString(), 5 ) );
                         p.setPrestataireArrayList( allProfils );
 
                         GetPrestataireDataService service = com.example.sarah.ateliergl.network.RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
