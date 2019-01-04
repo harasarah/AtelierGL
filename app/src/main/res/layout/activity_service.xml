@@ -265,7 +265,7 @@
                         android:tag="se"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Electricité"
+                        android:text="Eléctricité"
                         android:textAlignment="center"
                         android:textSize="14sp"
                         android:textStyle="bold"

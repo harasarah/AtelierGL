@@ -8,9 +8,9 @@ import retrofit2.http.GET;
 import retrofit2.http.PUT;
 
 public interface GetPrestataireDataService {
-    @GET("fpjrg")
+    @GET("iyfbo")
     Call<PrestataireList> getPrestataireData();
 
-    @PUT("fpjrg")
+    @PUT("iyfbo")
     Call<PrestataireList> setPrestataireData(@Body PrestataireList listPrestataires);
 }
