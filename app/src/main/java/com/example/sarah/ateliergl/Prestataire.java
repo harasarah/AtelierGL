@@ -2,7 +2,9 @@ package com.example.sarah.ateliergl;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Prestataire {
+import java.io.Serializable;
+
+public class Prestataire implements Serializable {
     @SerializedName("nom")
     String nom;
     //@SerializedName("prenom")

@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<PrestataireList> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "erreur de connexion!", Toast.LENGTH_SHORT).show();
             }
 
         });

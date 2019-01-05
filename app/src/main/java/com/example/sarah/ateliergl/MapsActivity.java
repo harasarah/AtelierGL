@@ -1,0 +1,83 @@
+package com.example.sarah.ateliergl;
+
+import android.content.Context;
+import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
+import android.widget.Toast;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+
+
+    public LatLng getLocationFromAddress(Context context, String strAddress) {
+
+        Geocoder coder = new Geocoder(context);
+        List<Address> address;
+        LatLng p1 = null;
+
+        try {
+            // May throw an IOException
+            address = coder.getFromLocationName(strAddress, 5);
+            if (address == null) {
+                return null;
+            }
+
+            Address location = address.get(0);
+            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+        }
+
+        return p1;
+    }
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        int a =0;
+        mMap = googleMap;
+        Intent i = getIntent();
+        List<Prestataire> list = (List<Prestataire>) i.getSerializableExtra("LIST");
+        for (Prestataire s : list) {
+        //a++;
+            mMap.addMarker(new MarkerOptions().position(getLocationFromAddress( getApplicationContext(), s.adresse)).title(s.nom));
+        }
+        //if (a != 0)
+         //   Toast.makeText( this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT ).show();
+
+        // Add a marker in Sydney and move the cameras
+        LatLng me =getLocationFromAddress( getApplicationContext(), "BP 242، Av. de L'Université, Kenitra");
+        mMap.addMarker(new MarkerOptions().position(me).title("Me"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 10));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(10),2000, null );
+
+
+
+
+    }
+}

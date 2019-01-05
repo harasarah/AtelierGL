@@ -8,13 +8,17 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.sarah.ateliergl.network.GetPrestataireDataService;
 import com.example.sarah.ateliergl.network.RetrofitInstance;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
 
 import butterknife.BindView;
@@ -29,6 +33,9 @@ public class ProfilsActivity extends AppCompatActivity {
     private MyAdapter adapter;
     @BindView(R.id.recycler_view_prestataire_list)
     RecyclerView recyclerView;
+    ArrayList<Prestataire> allProfils;
+
+
     String se;
 
     @Override
@@ -50,6 +57,10 @@ public class ProfilsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
                 generatePrestataireList( response.body().getPrestataireArrayList() );
+
+                allProfils = (ArrayList<Prestataire>) response.body().getPrestataireArrayList();
+
+
             }
 
             @Override
@@ -57,6 +68,16 @@ public class ProfilsActivity extends AppCompatActivity {
                 Toast.makeText( ProfilsActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT ).show();
             }
         } );
+        Button click_map = (Button) findViewById(R.id.map);
+        click_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                List<Prestataire> list = allProfils;
+                Intent intent_map = new Intent(getApplicationContext(), MapsActivity.class);
+                intent_map.putExtra("LIST", (Serializable) list);
+                startActivity(intent_map);
+            }
+        });
     }
 
     /*Method to generate List of employees using RecyclerView with custom adapter*/
@@ -88,19 +109,5 @@ public class ProfilsActivity extends AppCompatActivity {
         recyclerView.setAdapter( adapter );
     }
 
-    @OnItemClick(R.id.recycler_view_prestataire_list)
-    public void onListClicked(int position) {
-        Intent intent = new Intent( ProfilsActivity.this, activity_profil.class );
-        //Prestataire pres = recyclerView.get(position);
-        intent.putExtra( "nom", "no" );
-        //intent.putExtra( "prenom", pres.tel );
-        //intent.putExtra("cin", pres.cin);
-        //intent.putExtra("imageID", pres.imageID);
-        //intent.putExtra("adresse", pres.adresse);
-        //intent.putExtra("tel", pres.tel);
-        //intent.putExtra("password", pres.password);
-        // intent.putExtra("profession", pres.profession);
-        //intent.putExtra("rating", 3);
-        startActivity(intent);
-    }
+
 }

@@ -8,7 +8,7 @@
     <string name="CONNEXION_sinscrire">Pas de compte ?</string>
     <string name="CONNEXION_inscription_link">Inscrivez-vous !</string>
     <string name="CONNEXION_password_link">Cliquez ici.</string>
-
+    <string name="View_Prestataire">Localisez-les!</string>
     <!-- Form strings -->
     <string name="FORM_nom_hint">Votre nom..</string>
     <string name="FORM_prenom_hint">Votre prénom..</string>
@@ -35,6 +35,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>

@@ -29,64 +29,7 @@ public class PrestataireFragment extends Fragment {
     ArrayList<Prestataire> allProfils;
     String se;
     RatingBar rating;
-    private boolean validate (EditText email){
 
-        if (email.toString().isEmpty()){
-            email.setError("champs vide");
-            return false;
-
-        } else {
-            if ( Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches() || Patterns.PHONE.matcher(email.toString()).matches()) {
-                email.setError(null);
-                return true;
-            }
-            else {
-
-                email.setError("entrer un vrai mail ou numero");
-                return false;
-            }
-
-
-        }
-    }
-    private boolean validate1 (EditText nom){
-
-        if (nom.toString().isEmpty()){
-            nom.setError("champs vide");
-            return false;
-
-        } else {
-            if ( Patterns.EMAIL_ADDRESS.matcher(nom.toString()).matches()) {
-                nom.setError(null);
-                return true;
-            }
-            else {
-                nom.setError("seulement les lettres sont autorisés");
-                return false;
-            }
-
-
-        }
-    }
-    private boolean validate2 (EditText phone){
-
-        if (phone.toString().isEmpty()){
-            phone.setError("champs vide");
-            return false;
-
-        } else {
-            if ( Patterns.PHONE.matcher(phone.toString()).matches()) {
-                phone.setError(null);
-                return true;
-            }
-            else {
-                phone.setError("seulement les lettres sont autorisés");
-                return false;
-            }
-
-
-        }
-    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

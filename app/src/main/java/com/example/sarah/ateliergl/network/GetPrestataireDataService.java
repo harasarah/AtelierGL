@@ -10,10 +10,10 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface GetPrestataireDataService {
-    @GET("i2pck")
+    @GET("d0yzk")
     Call<PrestataireList> getPrestataireData();
 
-    @PUT("i2pck")
+    @PUT("d0yzk")
     Call<PrestataireList> setPrestataireData(@Body PrestataireList listPrestataires);
 
 }
