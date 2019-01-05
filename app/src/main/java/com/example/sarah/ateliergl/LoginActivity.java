@@ -2,7 +2,9 @@ package com.example.sarah.ateliergl;
 import retrofit2.Callback;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.Editable;
@@ -37,8 +39,18 @@ public class LoginActivity extends AppCompatActivity {
                 boolean test = false;
                 for (Prestataire s : allProfils) {
                     if ((log.equals(s.mail)) && (pass.equals(s.mdp)) && (s.type_profil.equals("client"))) {
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("adresse",s.adresse).commit();
+                        editor.putString("nom",s.nom).commit();
+                        editor.putString("type_profil",s.type_profil).commit();
+                        editor.putString("mdp",s.mdp).commit();
+                        editor.putInt("tel",s.tel).commit();
+                        editor.putString("cin",s.cin).commit();
+                        editor.putString("mail",s.mail).commit();
                         Intent intent = new Intent(LoginActivity.this, ServiceActivity.class);
                         startActivity(intent);
+                        finish();
                         test = true;
                         break;
                     }
@@ -63,6 +75,10 @@ public class LoginActivity extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String adr =  prefs.getString("adresse", null);
+        String mdp =  prefs.getString("mdp", null);
+      //  if (adr.isEmpty() && mdp.isEmpty()){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -90,7 +106,10 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    //}   else {
+         //   Intent intent_service= new Intent(this, ServiceActivity.class);
+           // startActivity(intent_service);
+    //    }
     }
-
 
 }

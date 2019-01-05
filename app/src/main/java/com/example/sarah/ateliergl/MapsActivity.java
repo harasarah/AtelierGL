@@ -2,8 +2,10 @@ package com.example.sarah.ateliergl;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -69,10 +71,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         //if (a != 0)
          //   Toast.makeText( this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT ).show();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
+        String adr = prefs.getString("adresse", null);
+        String nom = prefs.getString("nom", null);
         // Add a marker in Sydney and move the cameras
-        LatLng me =getLocationFromAddress( getApplicationContext(), "BP 242، Av. de L'Université, Kenitra");
-        mMap.addMarker(new MarkerOptions().position(me).title("Me"));
+        LatLng me =getLocationFromAddress( getApplicationContext(), adr);
+        mMap.addMarker(new MarkerOptions().position(me).title(nom));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 10));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(10),2000, null );
 
