@@ -108,6 +108,24 @@ public class ProfilsActivity extends AppCompatActivity {
 
         recyclerView.setAdapter( adapter );
     }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        GetPrestataireDataService service = RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
+        Call<PrestataireList> call = service.getPrestataireData();
+        call.enqueue( new Callback<PrestataireList>() {
+            @Override
+            public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
+                generatePrestataireList( response.body().getPrestataireArrayList() );
+                allProfils = (ArrayList<Prestataire>) response.body().getPrestataireArrayList();
+            }
+
+            @Override
+            public void onFailure(Call<PrestataireList> call, Throwable t) {
+                Toast.makeText( ProfilsActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT ).show();
+            }
+        } );
+    }
 
 
 }
