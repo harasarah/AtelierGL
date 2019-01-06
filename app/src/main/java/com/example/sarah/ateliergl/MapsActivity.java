@@ -80,7 +80,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng me =getLocationFromAddress( getApplicationContext(), adr);
         mMap.addMarker(new MarkerOptions().position(me).title(nom));
         CameraUpdate location = CameraUpdateFactory.newLatLngZoom(
-                me, 20);
+                me, 10);
         mMap.animateCamera(location);
 
 
