@@ -14,7 +14,7 @@ Sarah Mouqine
 
 Zainab Rifi & Munat Daoudi
 
-Sarah Hammad & Othmane Feriani
+Sarah Hammadi & Othmane Feriani
 
 ## Lien pour essayer l'application
 
