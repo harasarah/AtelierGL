@@ -94,7 +94,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
 
     class PrestataireViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtNom, txtPrenom , txtPhone;
+        TextView txtNom, txtPrenom , txtPhone, txtCin;
         RatingBar ratingBar;
 
         PrestataireViewHolder(View itemView) {
@@ -103,6 +103,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PrestataireViewHol
             ratingBar = itemView.findViewById(R.id.ratingx);
           //  txtPrenom = (TextView) itemView.findViewById(R.id.prenom);
          //  txtPhone = (TextView) itemView.findViewById(R.id.txt_employee_phone);
+
         }
     }
 }
