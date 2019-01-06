@@ -3,10 +3,6 @@ package com.example.sarah.ateliergl;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,24 +22,25 @@ public class InscriptionActivity extends AppCompatActivity {
         ft.commit();
 
     }
-    public void ChangeFragment(View view){
+
+    public void ChangeFragment(View view) {
         Fragment fragment;
 
-        if (view == findViewById(R.id.logo_client)){
+        if (view == findViewById(R.id.logo_client)) {
             fragment = new ClientFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_inscription,fragment);
+            ft.replace(R.id.fragment_inscription, fragment);
             ft.commit();
             initialisation = false;
 
         }
 
-        if (view == findViewById(R.id.logo_prestataire)){
+        if (view == findViewById(R.id.logo_prestataire)) {
             fragment = new PrestataireFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_inscription,fragment);
+            ft.replace(R.id.fragment_inscription, fragment);
             ft.commit();
             initialisation = false;
 

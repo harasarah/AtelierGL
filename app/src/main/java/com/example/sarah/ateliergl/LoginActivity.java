@@ -1,18 +1,16 @@
 package com.example.sarah.ateliergl;
+
 import retrofit2.Callback;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sarah.ateliergl.network.GetPrestataireDataService;
@@ -20,8 +18,8 @@ import com.example.sarah.ateliergl.network.GetPrestataireDataService;
 import java.util.ArrayList;
 
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
+
 public class LoginActivity extends AppCompatActivity {
     EditText login;
     EditText password;
@@ -35,19 +33,19 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback<PrestataireList>() {
             @Override
             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
-                allProfils = (ArrayList<Prestataire>) response.body().getPrestataireArrayList();
+                allProfils = response.body().getPrestataireArrayList();
                 boolean test = false;
                 for (Prestataire s : allProfils) {
                     if ((log.equals(s.mail)) && (pass.equals(s.mdp)) && (s.type_profil.equals("client"))) {
                         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                         SharedPreferences.Editor editor = prefs.edit();
-                        editor.putString("adresse",s.adresse).commit();
-                        editor.putString("nom",s.nom).commit();
-                        editor.putString("type_profil",s.type_profil).commit();
-                        editor.putString("mdp",s.mdp).commit();
-                        editor.putInt("tel",s.tel).commit();
-                        editor.putString("cin",s.cin).commit();
-                        editor.putString("mail",s.mail).commit();
+                        editor.putString("adresse", s.adresse).commit();
+                        editor.putString("nom", s.nom).commit();
+                        editor.putString("type_profil", s.type_profil).commit();
+                        editor.putString("mdp", s.mdp).commit();
+                        editor.putInt("tel", s.tel).commit();
+                        editor.putString("cin", s.cin).commit();
+                        editor.putString("mail", s.mail).commit();
                         Intent intent = new Intent(LoginActivity.this, ServiceActivity.class);
                         startActivity(intent);
                         finish();
@@ -55,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                         break;
                     }
                 }
-                if (test == false ) {
+                if (test == false) {
                     Toast toast;
                     Context context = getApplicationContext();
                     String error_message = "Mot de passe ou login incorrecte, réessayez";
@@ -73,12 +71,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        String adr =  prefs.getString("adresse", null);
-        String mdp =  prefs.getString("mdp", null);
-      //  if (adr.isEmpty() && mdp.isEmpty()){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -106,10 +102,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-    //}   else {
-         //   Intent intent_service= new Intent(this, ServiceActivity.class);
-           // startActivity(intent_service);
-    //    }
     }
 
 }

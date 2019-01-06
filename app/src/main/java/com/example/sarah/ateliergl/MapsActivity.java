@@ -8,7 +8,6 @@ import android.location.Geocoder;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -36,7 +35,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-
     public LatLng getLocationFromAddress(Context context, String strAddress) {
 
         Geocoder coder = new Geocoder(context);
@@ -51,7 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
             Address location = address.get(0);
-            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
 
         } catch (IOException ex) {
 
@@ -60,31 +58,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         return p1;
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        int a =0;
+        int a = 0;
         mMap = googleMap;
         Intent i = getIntent();
         List<Prestataire> list = (List<Prestataire>) i.getSerializableExtra("LIST");
         for (Prestataire s : list) {
-        //a++;
-            mMap.addMarker(new MarkerOptions().position(getLocationFromAddress( getApplicationContext(), s.adresse)).title(s.nom));
+            mMap.addMarker(new MarkerOptions().position(getLocationFromAddress(getApplicationContext(), s.adresse)).title(s.nom));
         }
-        //if (a != 0)
-         //   Toast.makeText( this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT ).show();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         String adr = prefs.getString("adresse", null);
         String nom = prefs.getString("nom", null);
-        // Add a marker in Sydney and move the cameras
-        LatLng me =getLocationFromAddress( getApplicationContext(), adr);
+        LatLng me = getLocationFromAddress(getApplicationContext(), adr);
         mMap.addMarker(new MarkerOptions().position(me).title(nom));
         CameraUpdate location = CameraUpdateFactory.newLatLngZoom(
                 me, 10);
         mMap.animateCamera(location);
-
-
-
 
 
     }

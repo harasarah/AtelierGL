@@ -1,11 +1,8 @@
 package com.example.sarah.ateliergl;
 
 import android.Manifest;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.media.effect.Effect;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -13,8 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -32,25 +27,26 @@ import retrofit2.Response;
 public class activity_profil extends AppCompatActivity {
     ArrayList<Prestataire> allProfils;
     int i;
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult( requestCode, permissions, grantResults );
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-        ButterKnife.bind (this);
-        final Bundle extras= getIntent().getExtras();
+        ButterKnife.bind(this);
+        final Bundle extras = getIntent().getExtras();
 
         String nom = new String((extras).getString("nom"));
         final Integer tel = new Integer((extras).getInt("tel"));
         String adresse = new String((extras).getString("adresse"));
-        final float rating = new Float((extras).getFloat("rating"));
 
-        TextView t_nom = (TextView) findViewById(R.id.nom);
-        TextView t_adresse = (TextView) findViewById(R.id.adress);
+        TextView t_nom = findViewById(R.id.nom);
+        TextView t_adresse = findViewById(R.id.adress);
         final RatingBar ratingBarProfil = findViewById(R.id.ratingBar2);
 
         t_nom.setText(nom);
@@ -61,43 +57,42 @@ public class activity_profil extends AppCompatActivity {
             public void onRatingChanged(RatingBar ratingBar, final float rating,
                                         boolean fromUser) {
                 ratingBar.setRating(rating);
-                GetPrestataireDataService service = com.example.sarah.ateliergl.network.RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
+                GetPrestataireDataService service = com.example.sarah.ateliergl.network.RetrofitInstance.getRetrofitInstance().create(GetPrestataireDataService.class);
 
 
                 Call<PrestataireList> call = service.getPrestataireData();
-                call.enqueue( new Callback<PrestataireList>() {
+                call.enqueue(new Callback<PrestataireList>() {
                     @Override
                     public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
-                        allProfils = (ArrayList<Prestataire>) response.body().getPrestataireArrayList();
+                        allProfils = response.body().getPrestataireArrayList();
                         PrestataireList p = new PrestataireList();
-                        for (i=0; i<allProfils.size(); i++)
-                            if (allProfils.get( i ).getCin().equals( extras.getString( "cin" ) ))
-                            {
-                                allProfils.get( i ).setRating( (ratingBarProfil.getRating() + oldRating )/2);
+                        for (i = 0; i < allProfils.size(); i++)
+                            if (allProfils.get(i).getCin().equals(extras.getString("cin"))) {
+                                allProfils.get(i).setRating((ratingBarProfil.getRating() + oldRating) / 2);
                                 break;
                             }
-                        p.setPrestataireArrayList( allProfils );
+                        p.setPrestataireArrayList(allProfils);
 
-                        GetPrestataireDataService service = com.example.sarah.ateliergl.network.RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
-                        Call<PrestataireList> call2 = service.setPrestataireData( p );
-                        call2.enqueue( new Callback<PrestataireList>() {
+                        GetPrestataireDataService service = com.example.sarah.ateliergl.network.RetrofitInstance.getRetrofitInstance().create(GetPrestataireDataService.class);
+                        Call<PrestataireList> call2 = service.setPrestataireData(p);
+                        call2.enqueue(new Callback<PrestataireList>() {
                             @Override
                             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
-                                Toast.makeText( getApplicationContext(), "Rating Done", Toast.LENGTH_SHORT ).show();
+                                Toast.makeText(getApplicationContext(), "Rating Done", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
                             public void onFailure(Call<PrestataireList> call, Throwable t) {
-                                Toast.makeText( getApplicationContext(), "Something went wrong...Please try later!", Toast.LENGTH_SHORT ).show();
+                                Toast.makeText(getApplicationContext(), "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
                             }
-                        } );
+                        });
                     }
 
                     @Override
                     public void onFailure(Call<PrestataireList> call, Throwable t) {
-                        Toast.makeText( getApplicationContext(), "Something went wrong...Please try later!", Toast.LENGTH_SHORT ).show();
+                        Toast.makeText(getApplicationContext(), "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
                     }
-                } );
+                });
 
             }
         });
@@ -105,9 +100,8 @@ public class activity_profil extends AppCompatActivity {
 
 
         ImageView return_img = findViewById(R.id.return_img);
-        return_img.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v)
-            {
+        return_img.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 activity_profil.this.finish();
             }
         });
@@ -119,13 +113,12 @@ public class activity_profil extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                    Uri phoneNumber = Uri.parse( "tel:"+tel );
-                    Intent call = new Intent(Intent.ACTION_CALL, phoneNumber);
+                Uri phoneNumber = Uri.parse("tel:" + tel);
+                Intent call = new Intent(Intent.ACTION_CALL, phoneNumber);
 
-                if (ActivityCompat.checkSelfPermission(activity_profil.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
-                {
-                    Log.d( "test phone", "Calling" );
-                    ActivityCompat.requestPermissions(activity_profil.this, new String[] {Manifest.permission.CALL_PHONE}, 1);
+                if (ActivityCompat.checkSelfPermission(activity_profil.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    Log.d("test phone", "Calling");
+                    ActivityCompat.requestPermissions(activity_profil.this, new String[]{Manifest.permission.CALL_PHONE}, 1);
                     return;
                 }
                 startActivity(call);

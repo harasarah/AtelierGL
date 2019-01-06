@@ -1,10 +1,12 @@
 package com.example.sarah.ateliergl;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
+
 public class ServiceActivity extends AppCompatActivity {
 
     CardView cardPe, cardPl, cardJa, cardEl, cardMe;
@@ -22,7 +24,7 @@ public class ServiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String se = ((TextView) view.findViewWithTag("se")).getText().toString();
-                Intent intent_service= new Intent(ServiceActivity.this, ProfilsActivity.class);
+                Intent intent_service = new Intent(ServiceActivity.this, ProfilsActivity.class);
                 intent_service.putExtra("se", se);
                 startActivity(intent_service);
             }

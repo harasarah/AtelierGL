@@ -1,8 +1,6 @@
 package com.example.sarah.ateliergl;
 
 import android.content.Intent;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +10,6 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.sarah.ateliergl.network.GetPrestataireDataService;
@@ -22,11 +19,8 @@ import com.mancj.materialsearchbar.MaterialSearchBar;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnItemClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -83,7 +77,7 @@ public class ProfilsActivity extends AppCompatActivity {
             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
                 generatePrestataireList(response.body().getPrestataireArrayList());
 
-                allProfils = (ArrayList<Prestataire>) response.body().getPrestataireArrayList();
+                allProfils = response.body().getPrestataireArrayList();
 
 
             }
@@ -93,7 +87,7 @@ public class ProfilsActivity extends AppCompatActivity {
                 Toast.makeText(ProfilsActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
-        Button click_map = (Button) findViewById(R.id.map);
+        Button click_map = findViewById(R.id.map);
         click_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,17 +112,8 @@ public class ProfilsActivity extends AppCompatActivity {
             if (p.service == null) continue;
             if (p.service.equals(se)) empDataListFiltered.add(p);
         }
-        /*empDataList.removeIf(new Predicate<Prestataire>() {
-            @Override
-            public boolean test(Prestataire prestataire) {
-                if (prestataire.service == null) return true;
-                if(prestataire.service.equals(se)){
-                    return false;
-                }
-                return true;
-            }
-        });*/
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_prestataire_list);
+
+        recyclerView = findViewById(R.id.recycler_view_prestataire_list);
 
         adapter = new MyAdapter(empDataListFiltered, this);
 
@@ -148,7 +133,7 @@ public class ProfilsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
                 generatePrestataireList(response.body().getPrestataireArrayList());
-                allProfils = (ArrayList<Prestataire>) response.body().getPrestataireArrayList();
+                allProfils = response.body().getPrestataireArrayList();
             }
 
             @Override

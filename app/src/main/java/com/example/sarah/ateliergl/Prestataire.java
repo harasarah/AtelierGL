@@ -7,8 +7,6 @@ import java.io.Serializable;
 public class Prestataire implements Serializable {
     @SerializedName("nom")
     String nom;
-    //@SerializedName("prenom")
-   // String prenom;
     @SerializedName("adresse")
     String adresse;
     @SerializedName("ville")
@@ -28,10 +26,8 @@ public class Prestataire implements Serializable {
     @SerializedName("rating")
     float rating;
 
-    public Prestataire(String nom, String prenom, String adresse, String ville, Integer tel, String service,String cin, String type_profil, String mdp, String mail, float rating) {
-       // this.imageID = imageID;
+    public Prestataire(String nom, String prenom, String adresse, String ville, Integer tel, String service, String cin, String type_profil, String mdp, String mail, float rating) {
         this.nom = nom;
-     //   this.prenom = prenom;
         this.adresse = adresse;
         this.ville = ville;
         this.tel = tel;
@@ -44,10 +40,6 @@ public class Prestataire implements Serializable {
     }
 
 
-
-
-
-
     public String getNom() {
         return nom;
     }
@@ -55,14 +47,6 @@ public class Prestataire implements Serializable {
     public void setNom(String nom) {
         this.nom = nom;
     }
-
-    /*public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }*/
 
     public String getAdresse() {
         return adresse;
