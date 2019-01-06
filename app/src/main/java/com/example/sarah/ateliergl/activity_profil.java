@@ -54,16 +54,13 @@ public class activity_profil extends AppCompatActivity {
         final RatingBar ratingBarProfil = findViewById(R.id.ratingBar2);
 
         t_nom.setText(nom);
+        final float oldRating = new Float((extras).getFloat("rating"));
 
-        //ratingBarProfil.setRating(rating);
 
         ratingBarProfil.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            public void onRatingChanged(RatingBar ratingBar, float rating,
+            public void onRatingChanged(RatingBar ratingBar, final float rating,
                                         boolean fromUser) {
                 ratingBar.setRating(rating);
-                //Log.d("Rating", "your selected value is :"+rating);
-                rating = ratingBarProfil.getRating();
-
                 GetPrestataireDataService service = com.example.sarah.ateliergl.network.RetrofitInstance.getRetrofitInstance().create( GetPrestataireDataService.class );
 
 
@@ -76,7 +73,7 @@ public class activity_profil extends AppCompatActivity {
                         for (i=0; i<allProfils.size(); i++)
                             if (allProfils.get( i ).getCin().equals( extras.getString( "cin" ) ))
                             {
-                                allProfils.get( i ).setRating( ratingBarProfil.getRating() );
+                                allProfils.get( i ).setRating( (ratingBarProfil.getRating() + oldRating )/2);
                                 break;
                             }
                         p.setPrestataireArrayList( allProfils );
@@ -86,7 +83,7 @@ public class activity_profil extends AppCompatActivity {
                         call2.enqueue( new Callback<PrestataireList>() {
                             @Override
                             public void onResponse(Call<PrestataireList> call, Response<PrestataireList> response) {
-                                Toast.makeText( getApplicationContext(), "", Toast.LENGTH_SHORT ).show();
+                                Toast.makeText( getApplicationContext(), "Rating Done", Toast.LENGTH_SHORT ).show();
                             }
 
                             @Override
